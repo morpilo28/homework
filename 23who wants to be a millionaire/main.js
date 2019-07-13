@@ -1,5 +1,4 @@
 "use strict";
-//
 var questionCounter = 0;
 var questions;
 var pickedAnswers = [];
@@ -11,17 +10,6 @@ const promise = fetch('main.json').then(res => res.json()).then((data) => {
     displayCurrentQuestion();
 }).catch(err => { throw err });
 
-function shuffle(arr) {
-    var newArr = [];
-    while (arr.length > 0) {
-        let index = Math.floor(Math.random() * arr.length);
-        let item = arr.splice(index, 1)[0];
-        newArr.push(item);
-    }
-    return newArr;
-}
-
-
 function shuffleQuestionsAnswers(questions) {
     let newQuestions = shuffle(questions);
     for (let i = 0; i < newQuestions.length; i++) {
@@ -30,6 +18,29 @@ function shuffleQuestionsAnswers(questions) {
     }
 
     return newQuestions;
+}
+
+function shuffle(arr) {
+    let newArr = [];
+    while (arr.length > 0) {
+        let index = Math.floor(Math.random() * arr.length);
+        let item = arr.splice(index, 1)[0];
+        newArr.push(item);
+    }
+    return newArr;
+}
+
+function displayCurrentQuestion() {
+    let questionObj = questions[questionCounter];
+    let questionElement = document.getElementById('question');
+    questionElement.innerHTML = questionObj.q;
+    questionObj.a.forEach(function (answerObj, i) {
+        var answerElement = document.getElementById('answer' + i);
+        answerElement.innerHTML = answerObj.aText;
+        answerElement.addEventListener("click", onAnswerClick);
+    });
+
+    startCountDown();
 }
 
 function onAnswerClick(element) {
@@ -48,23 +59,6 @@ function moveToNextQuestion() {
     }
 }
 
-function finishGame() {
-    clearInterval(timer);
-    let correctAnswers = 0;
-    questions.forEach(function (question, i) {
-        let pickedAnswerIndex = pickedAnswers[i];
-        if (pickedAnswerIndex !== -1 && question.a[pickedAnswerIndex].isTrue) {
-            correctAnswers++;
-        }
-    });
-    alert("You were right in " + correctAnswers + " and wrong in " + (questions.length - correctAnswers) + " out of " + questions.length + " questions.");
-}
-
-function updateTimerView() {
-    let remainingTimeElement = document.getElementById('remainingTime');
-    remainingTimeElement.innerHTML = remainingTime;
-}
-
 function startCountDown() {
     remainingTime = 5;
     updateTimerView();
@@ -79,17 +73,35 @@ function startCountDown() {
     }, 1000)
 }
 
-function displayCurrentQuestion() {
-    
-    let questionObj = questions[questionCounter];
-    var questionElement = document.getElementById('question');
-    questionElement.innerHTML = questionObj.q;
-    questionObj.a.forEach(function (answerObj, i) {
-        var answerElement = document.getElementById('answer' + i);
-        answerElement.innerHTML = answerObj.aText;
-        answerElement.addEventListener("click", onAnswerClick);
-    });
-
-    startCountDown();
+function updateTimerView() {
+    let remainingTimeElement = document.getElementById('remainingTime');
+    remainingTimeElement.innerHTML = 'time remaining: ' + remainingTime;
 }
 
+function finishGame() {
+    clearInterval(timer);
+    let correctAnswers = 0;
+    questions.forEach(function (question, i) {
+        let pickedAnswerIndex = pickedAnswers[i];
+        if (pickedAnswerIndex !== -1 && question.a[pickedAnswerIndex].isTrue) {
+            correctAnswers++;
+        }
+    });
+    // removeGameBox(correctAnswers);
+    alert("You were right in " + correctAnswers + "\nand wrong in " + (questions.length - correctAnswers) + "\nout of " + questions.length + " questions.");
+}
+
+/*  function removeGameBox(correctAnswers) {
+    var gameBox = document.getElementById('gameBox');
+    document.body.removeChild(gameBox);
+
+    var result = document.createElement('div');
+    result.id = 'resultBox';
+    document.body.appendChild(result);
+    result.innerHTML = "You were right in " + correctAnswers + " and wrong in " + (questions.length - correctAnswers) + " out of " + questions.length + " questions.";
+
+    var startNewButton = document.createElement('button');
+    startNewButton.id = 'startNewButton';
+    document.body.appendChild(startNewButton);
+    startNewButton.innerHTML = 'Start A New Game';
+}  */
