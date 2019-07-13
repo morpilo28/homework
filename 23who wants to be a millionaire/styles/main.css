@@ -1,0 +1,13 @@
+#question{
+    width: 400px;
+    height: 25px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.answers{
+    width: 200px;
+    height: 25px;
+    border: 1px solid black;
+    text-align: center;
+}

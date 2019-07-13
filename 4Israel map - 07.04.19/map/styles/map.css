@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: url(israel_map.jpg);
+    background-repeat: no-repeat;
+    height: 1073px;
+}
+
+div>span{
+    font-family: "Arial Black", Gadget, sans-serif;
+    position: absolute;
+}
+
+.large{
+    font-size: xx-large;
+  }
+
+.syria{
+    top: 74px;
+    left: 621px;
+    transform: rotate(-25deg);
+}
+
+.lebanon{
+    top: 40px;
+    left: 404px;
+}
+
+.jordan{
+    top: 417px;
+    left: 562px;
+}
+
+.egypt{
+    top: 833px;
+    left: 97px;
+    transform: rotate(31deg);
+}
+
+.Mediterranean{
+    top: 231px;
+    left: 80px;
+    transform: rotate(-67deg);
+}
+
+.ayosh{
+    top: 327px;
+    left: 373px;
+    transform: rotate(-90deg);
+}
+
+.dead{
+    top: 499px;
+    left: 432px;
+    transform: rotate(-82deg);
+}
+
+.kinneret{
+    top: 157px;
+    left: 467px;
+    transform: rotate(-89deg)
+}
+
+.haifa{
+    top: 155px;
+    left: 308px;
+}
+
+.jerusalem{
+    top: 434px;
+    left: 343px;
+}
+
+.tel_aviv{
+    top: 349px;
+    left: 243px;
+}
+
+.beer_sheva{
+    top: 602px;
+    left: 260px;
+    transform: rotate(-43deg)
+}
+
+.eilat{
+    top: 1025px;
+    left: 305px;
+}
+
+.Tiberias{
+    top: 161px;
+    left: 425px;
+}
+
+.kiryat_shmona{
+    top: 50px;
+    left: 480px;
+}
+
+.gaza{
+    top: 503px;
+    left: 216px;
+    transform: rotate(-54deg);
+}
+
+.sderot{
+    top: 496px;
+    left: 250px;
+    transform: rotate(-1deg);
+}
+
+.Mitzpe_Ramon{
+    top: 750px;
+    left: 303px;
+}
+
+.netanya{
+    top: 277px;
+    left: 281px;
+}
+
+.ashkelon{
+    top: 460px;
+    left: 207px;
+}
+
+.ashdod{
+    top: 425px;
+    left: 227px;
+}
+
+.nahariya{
+    top: 102px;
+    left: 332px;
+}

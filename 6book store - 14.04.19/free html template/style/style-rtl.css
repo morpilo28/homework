@@ -1,0 +1,64 @@
+body
+{ direction: rtl;}
+
+.left
+{ float: right;
+  margin-right: 0;
+  margin-left: 10px;}
+
+.right
+{ float: left; 
+  margin-left: 0;
+  margin-right: 10px;}
+
+ul
+{ margin: 2px 17px 22px 0;}
+
+ul li
+{ padding: 0 5px 4px 0;}
+
+ol
+{ margin: 8px 20px 22px 0;}
+
+#logo #logo_text 
+{ right: 0;} 
+
+ul#menu, ul#menu li
+{ float: right;}
+
+ul#menu li a
+{ float: right; 
+  margin: 10px 10px 0 0;} 
+
+#site_content
+{ padding: 0 20px 20px 24px;} 
+
+.sidebar
+{ float: left;}
+
+.sidebar li a, .sidebar li a:hover
+{ padding: 0 40px 0 0;
+  background: transparent url(link.png) no-repeat right center;} 
+
+#content
+{ text-align: right;
+  float: right;}
+
+#content ul li
+{ padding: 0 25px 4px 0;
+  background: url(bullet.png) no-repeat right;}
+
+#colours
+{ text-align: left;
+  padding: 66px 300px 0px 16px;}
+  
+.form_settings span
+{ float: right; 
+  text-align: right;}
+  
+.form_settings .submit
+{ margin: 0 212px 0 0;}
+  
+table tr th, table tr td
+{ text-align: right;}
+  

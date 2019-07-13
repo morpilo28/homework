@@ -1,0 +1,19 @@
+div{
+    border-color: #000000;
+    border-style: solid;
+    padding: 0.9%;
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 94%;
+}
+
+a{
+    padding: 1%;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 5%;
+}
+
+.active{
+    color: rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,33 @@
+body{
+    margin: 5%;
+}
+
+table{
+    margin: 1%;
+    border-collapse: collapse;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+}
+
+table, th, td {
+    border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+tbody tr:nth-child(odd){
+  background: #cac8c8;
+}
+
+thead tr:nth-child(1){
+  background: #808080;
+}
+
+th{
+padding: 3%;
+  }
+
+.short{
+      width: 16%;
+  }

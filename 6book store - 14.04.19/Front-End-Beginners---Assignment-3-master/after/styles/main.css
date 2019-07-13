@@ -1,0 +1,120 @@
+body {
+    padding: 15px;
+    font-size: 15px;
+    width: 800px;
+    margin: 0 auto;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(70,137,102); /* #1 */
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(255,240,165); /* #2 */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: rgb(255,240,165); /* #2 */
+    color: rgb(70,137,102); /* #1 */
+}
+
+footer {
+    text-align: center;
+}
+
+figure img {
+    width: 30%;
+}
+
+h1 {
+    font-size: 2em;
+    color: rgb(142,40,0); /* #5 */
+}
+
+h2 {
+    font-size: 1.75em;
+    color: rgb(182,73,38); /* #4 */
+    border-bottom: 1px solid rgb(255,176,59); /* #3 */
+}
+
+h3 {
+    font-size: 1.5  em;
+    color: rgb(70,137,102); /* #1 */
+}
+
+/* forms */
+form {
+    font-size: 1.25em;
+}
+form div {
+    margin: 15px;
+}
+form label span{
+    vertical-align: top;
+    display: inline-block;
+    width: 130px;
+    color: rgb(142,40,0); /* #5 */
+    font-weight: 700;
+}
+
+form label input, label textarea {
+    border: 1px solid rgb(142,40,0); /* #5 */
+    padding: 7px;
+    outline: none;
+}
+
+form label input:focus, label textarea:focus {
+    border: 1px solid rgb(255,176,59); /* #3 */
+}
+
+form button {
+    padding: 10px;
+    width: 25%;
+    background-color: rgb(70,137,102); /* #1 */
+    color: rgb(255,240,165); /* #2 */
+    font-size: inherit;
+    outline: none;
+}
+
+/* page structure */
+main.page-content {
+    float: left;
+    width: 70%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+aside.right-boxes {
+    float: left;
+    width: 30%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+footer.page-footer {
+    clear: both;
+}
+
+/* main */
+.books-category {
+    overflow: hidden;
+}
+
+.books-category .single-book {
+    float: left;
+    width: 33%;
+}
+
+/* right */
+.top-books {
+
+}

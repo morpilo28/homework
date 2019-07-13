@@ -1,0 +1,47 @@
+// with consolo.log
+function tax(mobilePhone, accessory, vat) {
+    var wallet = prompt("please enter your wallet amount");
+    mobilePhone = (mobilePhone * vat) + mobilePhone;
+    accessory = (accessory * vat) + accessory;
+    var numberOfSmartphones = 0;
+    var numberOfAccessories = 0;
+    var purchaseSum;
+
+    for (wallet, numberOfSmartphones; wallet > mobilePhone; wallet = wallet - mobilePhone, numberOfSmartphones++) {
+    }
+
+    for (wallet, numberOfAccessories; wallet > accessory; wallet = wallet - accessory, numberOfAccessories++) {
+    }
+
+    purchaseSum = (mobilePhone * numberOfSmartphones) + (accessory * numberOfAccessories);
+    purchaseSum = Math.round(purchaseSum * 100) / 100.0;
+
+    console.log("You can purchase", numberOfSmartphones, "smartphones and", numberOfAccessories, "smartphone accessories with total cost of", purchaseSum, "NIS.");
+}
+
+tax(849, 39, 0.17)
+
+
+
+// with return
+function tax(mobilePhone, accessory, vat) {
+    var wallet = prompt("please enter your wallet amount");
+    mobilePhone = (mobilePhone * vat) + mobilePhone;
+    accessory = (accessory * vat) + accessory;
+    var numberOfSmartphones = 0;
+    var numberOfAccessories = 0;
+    var purchaseSum;
+
+    for (wallet, numberOfSmartphones; wallet > mobilePhone; wallet = wallet - mobilePhone, numberOfSmartphones++) {
+    }
+
+    for (wallet, numberOfAccessories; wallet > accessory; wallet = wallet - accessory, numberOfAccessories++) {
+    }
+
+    purchaseSum = (mobilePhone * numberOfSmartphones) + (accessory * numberOfAccessories);
+    purchaseSum = Math.round(purchaseSum * 100) / 100.0;
+
+    return ("You can purchase " + numberOfSmartphones + " smartphones and " + numberOfAccessories + " smartphone accessories with total cost of " + purchaseSum + " NIS.");
+}
+
+tax(849, 39, 0.17)

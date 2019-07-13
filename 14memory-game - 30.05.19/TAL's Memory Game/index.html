@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ranga|ZCOOL+KuaiLe|Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo">
+        <span>Memory Game</span>
+    </div>
+    <div class="slogan">T . K . Nicholas</div>
+    <div class="start-page">
+        <button class="btn" id="start-btn">START</button>
+    </div>
+    <div class="popup fade popup-animations" id="size-popup">
+        <div class="header-text" >Choose Size</div>
+        <div class="close" id="close-popup" onclick="ClosePopup();">&#10006;</div>
+        <div class="size-option" id="size1">4X4</div>
+        <div class="size-option" id="size2">6X6</div>
+        <div class="size-option" id="size3">8X8</div>
+        <div class="size-option" id="size4">10X10</div>
+        <button class="btn" id="matrix-btn">Play</button>
+    </div>
+    <div class="game" id="game-body"></div>
+    <script src="main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>

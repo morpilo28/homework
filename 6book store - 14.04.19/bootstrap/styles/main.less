@@ -1,0 +1,113 @@
+@color1: rgb(70, 137, 102);
+/* #1 */
+@color2: rgb(255, 240, 165);
+/* #2 */
+@color3: rgb(255, 176, 59);
+/* #3 */
+@color4: rgb(182, 73, 38);
+/* #4 */
+@color5: rgb(142, 40, 0);
+/* #5 */
+
+body {
+    width: 800px;
+    font-size: 15px;
+    margin: 0 auto;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    header {
+       
+        nav {
+            background-color: @color1;
+            display: flex;
+            width: 100%;
+
+            ul {
+                overflow: hidden;
+
+                li {
+                    a {
+                        color: @color2;
+
+                        &:hover {
+                            text-decoration: none;
+                            background-color: @color2;
+                            color: @color1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        width: 70%;
+      
+        h1 {
+            font-size: 2em;
+            color: @color5;
+
+        }
+
+        section {
+            width: 73%;
+            padding-right: 6px;
+
+
+            h2 {
+                font-size: 1.75em;
+                color: @color4;
+                border-bottom: 1px solid @color3;
+            }
+
+            div {
+
+                div {
+
+                    h3 {
+                        font-size: 1.5em;
+                        color: @color1;
+                    }
+
+                    figure {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+    }
+
+    aside {
+        section {
+            width: 26%;
+            bottom: 1620px;
+            right: -10px;
+
+            h2 {
+                font-size: 1.75em;
+                color: @color4;
+                border-bottom: 1px solid @color3;
+            }
+
+            div {
+                
+                h3 {
+                    font-size: 1.5em;
+                    color: @color1;
+                }
+
+                figure {
+                    width: 40%;
+                }
+            }
+
+        }
+    }
+    footer{
+        margin-top: 35px;
+        address{
+            margin-bottom: 0%;
+        }
+    }
+}

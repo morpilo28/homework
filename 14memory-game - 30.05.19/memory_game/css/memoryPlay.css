@@ -1,0 +1,80 @@
+/*----------------in common-------------*/
+#timeBox {
+    width: 492px;
+    height: 33px;
+    border: 2px solid black;
+    text-align: left;
+    font-size: 18px;
+    background-color: aquamarine;
+    padding: 12px 2px 2px 22px;
+}
+
+#timer {
+    margin-left: 23px;
+}
+
+#board {
+    width: 562px;
+    margin: 19px auto 3px 43px;
+}
+
+.sharedDesign {
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(236, 240, 16);
+}
+
+.SharedBtnStart {
+    width: 207px;
+    height: 40px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*----------------design for 4x4 board-------------*/
+.design4x4 {
+    width: 25%;
+    height: 106px;
+    background-color: rgb(236, 240, 16);
+}
+
+.btn4x4 {
+    margin: 12px 3px auto 180px
+}
+
+/*----------------design for 6x6 board-------------*/
+.design6x6 {
+    width: 16%;
+    height: 69px;
+    font-size: 58px;
+}
+
+.btnStart6x6 {
+    margin: 430px 8px auto -369px;
+}
+
+/*----------------design for 8x8 board-------------*/
+.design8x8 {
+    width: 12%;
+    height: 50px;
+    font-size: 45px;
+}
+
+.btnStart8x8 {
+    margin: 424px 8px auto -369px;
+}
+
+
+/*----------------design for 10x10 board-------------*/
+.design10x10 {
+    width: 10%;
+    height: 41px;
+    font-size: 37px;
+}
+
+.btnStart10x10 {
+    margin: 424px 8px auto -369px;
+}

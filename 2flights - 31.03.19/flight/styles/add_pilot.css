@@ -1,0 +1,21 @@
+form{
+    margin:7% 1% 1% 11%; 
+}
+
+input{
+    width: 30%;
+    border-color: rgba(0,0,0,0.6);
+    margin-top: 2%;
+    padding: 0.5%;
+}
+
+img{
+  margin: 8%;
+}
+
+button{
+    padding: 10px 40px 10px 40px;
+    background-color: #ffffff;
+    border-color: #000000;
+    margin-left: 40%;
+}

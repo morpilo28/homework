@@ -1,0 +1,1 @@
+var header = document.getElementById('heading'). innerHTML = '<h1> Choose a board size </h1>';

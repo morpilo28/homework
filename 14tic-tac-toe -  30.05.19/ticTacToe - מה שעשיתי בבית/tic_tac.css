@@ -1,0 +1,41 @@
+#ttt {
+    width: 270px;
+    margin: 28px auto 3px auto;
+}
+
+.design {
+    box-sizing: border-box;
+    width: 33%;
+    float: left;
+    border: 1px solid black;
+    height: 90px;
+    padding: 13px;
+    text-align: center;
+    font-size: 50px;
+    background-color: rgb(236, 240, 16);
+}
+
+#btn{
+    margin-top: 300px;
+    margin-left: -241px;
+    text-align: center;
+    padding: 9px;
+    font-size: 29px;
+    background-color: aqua;
+    border: 2px solid rgb(255,255,255);
+}
+
+#heading{
+    margin-top: 20px;
+    margin-left: -13px;
+    text-align: center;
+    padding: 9px;
+    font-size: 55px;
+    color: rgb(0, 0, 255);
+    margin-bottom: 26px;
+    
+}
+
+
+
+
