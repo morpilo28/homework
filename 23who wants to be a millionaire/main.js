@@ -23,7 +23,7 @@ function shuffleQuestionsAnswers(questions) {
 function shuffle(arr) {
     let newArr = [];
     while (arr.length > 0) {
-        let index = Math.floor(Math.random() * arr.length);
+        let index = Number(Math.floor(Math.random() * arr.length));
         let item = arr.splice(index, 1)[0];
         newArr.push(item);
     }
