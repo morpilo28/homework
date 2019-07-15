@@ -6,8 +6,17 @@ var remainingTime;
 var timer;
 
 const promise = fetch('main.json').then(res => res.json()).then((data) => {
-    questions = shuffleQuestionsAnswers(data);
-    displayCurrentQuestion();
+    console.log(data);
+   questions = shuffleQuestionsAnswers([...data]); 
+   /* 
+   // this line sends the array (to the shuffleQuestionsAnswers function) by refference and not by value. // not good!
+   shuffleQuestionsAnswers(data);
+
+   // this line sends the array (to the shuffleQuestionsAnswers function) by value and not by refference. // good!
+   shuffleQuestionsAnswers([...data]);
+   
+   */
+   displayCurrentQuestion();
 }).catch(err => { throw err });
 
 function shuffleQuestionsAnswers(questions) {
