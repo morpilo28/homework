@@ -69,7 +69,7 @@ function moveToNextQuestion() {
 }
 
 function startCountDown() {
-    remainingTime = 5;
+    remainingTime = 60;
     updateTimerView();
     clearInterval(timer);
     timer = setInterval(function () {
