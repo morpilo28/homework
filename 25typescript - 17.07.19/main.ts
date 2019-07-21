@@ -13,7 +13,7 @@
             if (x > 0 && x < 11) {
                 this._volume = x;
             } else {
-                this._volume = Math.floor(Math.random() * 10);
+                this._volume = Math.floor((Math.random() * 10)+1);
             }
         }
 
@@ -46,6 +46,76 @@
 
 //-------------ex2-------------
 (function () {
+    class FlashLight {
+        _color: string;
+        _length: number;
+        _lightVolume: number;
+        _numOfBatteries: number;
+
+        get length(): number {
+            return this._length;
+        }
+
+        set length(x: number) {
+            if (x >= 0) {
+                this._length = x;
+            } else {
+                this._length = Math.abs(x);
+            }
+        }
+
+        get lightVolume(): number {
+            return this._lightVolume;
+        }
+        set lightVolume(x: number) {
+            if (x >= 0) {
+                this._lightVolume = x;
+            } else {
+                this._lightVolume = Math.abs(x);
+            }
+        }
+
+        get numOfBatteries(): number {
+            return this._numOfBatteries;
+        }
+        set numOfBatteries(x: number) {
+            if (x > 0 && x <= 4) {
+                this._numOfBatteries = x;
+            } else {
+                this._numOfBatteries = Math.floor((Math.random() * 4) +1);
+            }
+        }
+
+        on(): String {
+            return 'on';
+        }
+
+        off(): String {
+            return 'off';
+        }
+
+        changeBatteries(): String {
+            return 'changeBatteries';
+        }
+
+        constructor(c: string, len: number, light: number, battery: number) {
+            this._color = c;
+            this._length = len;
+            this._lightVolume = light;
+            this._numOfBatteries = battery;
+        }
+    }
+
+
+    function main() {
+        let flashLight1 = new FlashLight('green', 4, 5, 2);
+        let flashLight2 = new FlashLight('white', 1, 2, 3);
+        let element = <HTMLInputElement>document.getElementById('ex2');
+        element.innerHTML += `<br> <u>exercise 2</u> <br> <b>flashLight1 1</b> <br> ${flashLight1.on()} 
+        <br> ${flashLight1.off()} <br> ${flashLight1.changeBatteries()} <br> <b>flashLight1 2</b> <br> 
+        ${flashLight2.on()} <br> ${flashLight2.off()} <br> ${flashLight2.changeBatteries()}`;
+    }
+    main();
 
 }());
 
@@ -129,7 +199,7 @@
 
     function main() {
         let chair1 = new Chair('material', 'white', 2, 2, 2);
-        let element = <HTMLInputElement>document.getElementById('ex2');
+        let element = <HTMLInputElement>document.getElementById('ex3');
         element.innerHTML += `<br><u>exercise 3</u><br>${chair1.material} <br> ${chair1._color} <br> ${chair1._length}
          <br> ${chair1._width} <br> ${chair1._height}<br>${chair1.volume()}`;
     }

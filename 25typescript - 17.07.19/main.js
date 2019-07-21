@@ -15,7 +15,7 @@
                     this._volume = x;
                 }
                 else {
-                    this._volume = Math.floor(Math.random() * 10);
+                    this._volume = Math.floor((Math.random() * 10) + 1);
                 }
             },
             enumerable: true,
@@ -42,6 +42,76 @@
 })();
 //-------------ex2-------------
 (function () {
+    var FlashLight = /** @class */ (function () {
+        function FlashLight(c, len, light, battery) {
+            this._color = c;
+            this._length = len;
+            this._lightVolume = light;
+            this._numOfBatteries = battery;
+        }
+        Object.defineProperty(FlashLight.prototype, "length", {
+            get: function () {
+                return this._length;
+            },
+            set: function (x) {
+                if (x >= 0) {
+                    this._length = x;
+                }
+                else {
+                    this._length = Math.abs(x);
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FlashLight.prototype, "lightVolume", {
+            get: function () {
+                return this._lightVolume;
+            },
+            set: function (x) {
+                if (x >= 0) {
+                    this._lightVolume = x;
+                }
+                else {
+                    this._lightVolume = Math.abs(x);
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FlashLight.prototype, "numOfBatteries", {
+            get: function () {
+                return this._numOfBatteries;
+            },
+            set: function (x) {
+                if (x > 0 && x <= 4) {
+                    this._numOfBatteries = x;
+                }
+                else {
+                    this._numOfBatteries = Math.floor((Math.random() * 4) + 1);
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        FlashLight.prototype.on = function () {
+            return 'on';
+        };
+        FlashLight.prototype.off = function () {
+            return 'off';
+        };
+        FlashLight.prototype.changeBatteries = function () {
+            return 'changeBatteries';
+        };
+        return FlashLight;
+    }());
+    function main() {
+        var flashLight1 = new FlashLight('green', 4, 5, 2);
+        var flashLight2 = new FlashLight('white', 1, 2, 3);
+        var element = document.getElementById('ex2');
+        element.innerHTML += "<br> <u>exercise 2</u> <br> <b>flashLight1 1</b> <br> " + flashLight1.on() + " \n        <br> " + flashLight1.off() + " <br> " + flashLight1.changeBatteries() + " <br> <b>flashLight1 2</b> <br> \n        " + flashLight2.on() + " <br> " + flashLight2.off() + " <br> " + flashLight2.changeBatteries();
+    }
+    main();
 }());
 // ----------ex3--------------
 (function () {
@@ -128,7 +198,7 @@
     }());
     function main() {
         var chair1 = new Chair('material', 'white', 2, 2, 2);
-        var element = document.getElementById('ex2');
+        var element = document.getElementById('ex3');
         element.innerHTML += "<br><u>exercise 3</u><br>" + chair1.material + " <br> " + chair1._color + " <br> " + chair1._length + "\n         <br> " + chair1._width + " <br> " + chair1._height + "<br>" + chair1.volume();
     }
     main();
