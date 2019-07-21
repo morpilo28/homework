@@ -15,7 +15,7 @@
                     this._volume = x;
                 }
                 else {
-                    this._volume = 0;
+                    this._volume = Math.floor(Math.random() * 10);
                 }
             },
             enumerable: true,
@@ -33,7 +33,7 @@
         return Speaker;
     }());
     function main() {
-        var speaker1 = new Speaker('blue', 11);
+        var speaker1 = new Speaker('blue', 9);
         var speaker2 = new Speaker('blue', 10);
         var element = document.getElementById('ex1');
         element.innerHTML += "<u>exercise 1</u> <br> " + speaker1.on() + " <br> " + speaker1.off() + " <br> " + speaker1.sound();
@@ -43,7 +43,7 @@
 //-------------ex2-------------
 (function () {
 }());
-//----------ex3--------------
+// ----------ex3--------------
 (function () {
     var Chair = /** @class */ (function () {
         function Chair(m, c, l, w, h) {
@@ -60,14 +60,16 @@
             set: function (x) {
                 console.log(x);
                 var that = this;
+                var m = 0;
                 var colorsArray = ['Black', 'White', 'Red', 'Green', 'Blue'];
                 colorsArray.forEach(function (element) {
-                    //console.log(element);
+                    m++;
                     if (x == element) {
                         that._color = x;
+                        debugger;
                     }
-                    else {
-                        that._color = '';
+                    else if (m == colorsArray.length) {
+                        that._color = 'color must be black, white, red, green or blue';
                     }
                 });
             },
@@ -125,7 +127,7 @@
         return Chair;
     }());
     function main() {
-        var chair1 = new Chair('material', 'purple', 2, 2, 2);
+        var chair1 = new Chair('material', 'white', 2, 2, 2);
         var element = document.getElementById('ex2');
         element.innerHTML += "<br><u>exercise 3</u><br>" + chair1.material + " <br> " + chair1._color + " <br> " + chair1._length + "\n         <br> " + chair1._width + " <br> " + chair1._height + "<br>" + chair1.volume();
     }

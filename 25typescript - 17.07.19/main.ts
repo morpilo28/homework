@@ -8,12 +8,12 @@
         get volume(): number {
             return this._volume;
         }
-        
+
         set volume(x: number) {
             if (x > 0 && x < 11) {
                 this._volume = x;
-            }else{
-                this._volume = 0;
+            } else {
+                this._volume = Math.floor(Math.random() * 10);
             }
         }
 
@@ -36,7 +36,7 @@
     }
 
     function main() {
-        let speaker1 = new Speaker('blue', 11);
+        let speaker1 = new Speaker('blue', 9);
         let speaker2 = new Speaker('blue', 10);
         let element = <HTMLInputElement>document.getElementById('ex1');
         element.innerHTML += `<u>exercise 1</u> <br> ${speaker1.on()} <br> ${speaker1.off()} <br> ${speaker1.sound()}`;
@@ -49,7 +49,7 @@
 
 }());
 
-//----------ex3--------------
+// ----------ex3--------------
 
 (function () {
     class Chair {
@@ -66,13 +66,15 @@
         set color(x: string) {
             console.log(x);
             var that = this;
+            var m = 0;
             let colorsArray = ['Black', 'White', 'Red', 'Green', 'Blue'];
             colorsArray.forEach(function (element) {
-                //console.log(element);
+                m++;
                 if (x == element) {
                     that._color = x;
-                } else {
-                    that._color = '';
+                    debugger;
+                } else if (m == colorsArray.length) {
+                    that._color = 'color must be black, white, red, green or blue';
                 }
             });
         }
@@ -126,7 +128,7 @@
     }
 
     function main() {
-        let chair1 = new Chair('material', 'purple', 2, 2, 2);
+        let chair1 = new Chair('material', 'white', 2, 2, 2);
         let element = <HTMLInputElement>document.getElementById('ex2');
         element.innerHTML += `<br><u>exercise 3</u><br>${chair1.material} <br> ${chair1._color} <br> ${chair1._length}
          <br> ${chair1._width} <br> ${chair1._height}<br>${chair1.volume()}`;
