@@ -1,6 +1,5 @@
 /* 1. needs to add: 
     * checking of validation date 
-    * algorithm Luhn to the Tz.
 2. put each class on different file and connect between them
 3. go over the code and see if there are any problems */
 
@@ -106,22 +105,46 @@ class Customer {
 
 class CreditCard {
     private TypeOfCreditCard: string;
-    private NumOfCreditCard: number;
-    private DateOfCreditCard: string;
+    private NumOfCreditCard: string;
+    private expirationDate: string;
     private Cvv: number;
 
-    constructor(TypeOfCreditCard: string, NumOfCreditCard: number, DateOfCreditCard: string, Cvv: number) {
+    constructor(TypeOfCreditCard: string, NumOfCreditCard: string, expirationDate: string, Cvv: number) {
         this.TypeOfCreditCard = TypeOfCreditCard;
         this.NumOfCreditCard = NumOfCreditCard;
-        this.DateOfCreditCard = DateOfCreditCard;
+        this.expirationDate = expirationDate;
         this.Cvv = Cvv;
     }
 
     public print(): string {
         return `TypeOfCreditCard: ${this.TypeOfCreditCard} <br>
-        NumOfCreditCard: ${this.NumOfCreditCard} <br>
-        DateOfCreditCard: ${this.DateOfCreditCard} <br>
+        NumOfCreditCard: ${this.validCreditCard(this.NumOfCreditCard)} <br>
+        DateOfCreditCard: ${this.isExpired(this.expirationDate)} <br>
         Cvv: ${this.Cvv}`;
+    }
+
+    public validCreditCard(value: string): string {
+        // The Luhn Algorithm
+        let nCheck = 0, bEven = false;
+        value = value.replace(/\D/g, "");
+
+        for (var n = value.length - 1; n >= 0; n--) {
+            var cDigit = value.charAt(n),
+                nDigit = parseInt(cDigit, 10);
+            if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+            nCheck += nDigit;
+            bEven = !bEven;
+        }
+
+        if((nCheck % 10) == 0){
+            return value;
+        }else{
+            return 'number of credit card is not valid';
+        }
+    }
+
+    public isExpired(inputExpirationDate:string):string{
+     return inputExpirationDate;
     }
 }
 
@@ -129,7 +152,7 @@ function main() {
     let address = new Address('lod', 'abba eban', 10, 90358);
     let shop = new Shop('food', 20, 600, address);
     let manager = new Manager('mor', 'pilo', 356759856, 3000, address);
-    let creditCard = new CreditCard('visa', 6894563434, '03/2020', 599);
+    let creditCard = new CreditCard('visa', '050500505', '03/2020', 599);
     let customer = new Customer('michal', 'harel', creditCard);
 
     let printTo = <HTMLInputElement>document.getElementById('print');

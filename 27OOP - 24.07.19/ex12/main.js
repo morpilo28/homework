@@ -1,6 +1,5 @@
 /* 1. needs to add:
     * checking of validation date
-    * algorithm Luhn to the Tz.
 2. put each class on different file and connect between them
 3. go over the code and see if there are any problems */
 "use strict";
@@ -63,14 +62,35 @@ var Customer = /** @class */ (function () {
     return Customer;
 }());
 var CreditCard = /** @class */ (function () {
-    function CreditCard(TypeOfCreditCard, NumOfCreditCard, DateOfCreditCard, Cvv) {
+    function CreditCard(TypeOfCreditCard, NumOfCreditCard, expirationDate, Cvv) {
         this.TypeOfCreditCard = TypeOfCreditCard;
         this.NumOfCreditCard = NumOfCreditCard;
-        this.DateOfCreditCard = DateOfCreditCard;
+        this.expirationDate = expirationDate;
         this.Cvv = Cvv;
     }
     CreditCard.prototype.print = function () {
-        return "TypeOfCreditCard: " + this.TypeOfCreditCard + " <br>\n        NumOfCreditCard: " + this.NumOfCreditCard + " <br>\n        DateOfCreditCard: " + this.DateOfCreditCard + " <br>\n        Cvv: " + this.Cvv;
+        return "TypeOfCreditCard: " + this.TypeOfCreditCard + " <br>\n        NumOfCreditCard: " + this.validCreditCard(this.NumOfCreditCard) + " <br>\n        DateOfCreditCard: " + this.isExpired(this.expirationDate) + " <br>\n        Cvv: " + this.Cvv;
+    };
+    CreditCard.prototype.validCreditCard = function (value) {
+        // The Luhn Algorithm
+        var nCheck = 0, bEven = false;
+        value = value.replace(/\D/g, "");
+        for (var n = value.length - 1; n >= 0; n--) {
+            var cDigit = value.charAt(n), nDigit = parseInt(cDigit, 10);
+            if (bEven && (nDigit *= 2) > 9)
+                nDigit -= 9;
+            nCheck += nDigit;
+            bEven = !bEven;
+        }
+        if ((nCheck % 10) == 0) {
+            return value;
+        }
+        else {
+            return 'number of credit card is not valid';
+        }
+    };
+    CreditCard.prototype.isExpired = function (inputExpirationDate) {
+        return inputExpirationDate;
     };
     return CreditCard;
 }());
@@ -78,9 +98,9 @@ function main() {
     var address = new Address('lod', 'abba eban', 10, 90358);
     var shop = new Shop('food', 20, 600, address);
     var manager = new Manager('mor', 'pilo', 356759856, 3000, address);
-    var creditCard = new CreditCard('visa', 6894563434, '03/2020', 599);
+    var creditCard = new CreditCard('visa', '050500505', '03/2020', 599);
     var customer = new Customer('michal', 'harel', creditCard);
     var printTo = document.getElementById('print');
-    printTo.innerHTML = "<u> address </u> <br> " + address.print() + " <br> <br>\n    <u> shop </u> <br>  " + shop.print() + " <br> <br>\n    <u> manager </u> <br>  " + manager.print() + " <br> <br>\n    <u> creditCard </u> <br> " + creditCard.print() + " <br> <br>\n    <u> customer </u> <br> " + customer.print() + " <br> <br>\n    " + customer.FullName() + " <br> <br>";
+    printTo.innerHTML = "<u> address </u> <br> " + address.print() + " <br> <br>\n    <u> shop </u> <br>  " + shop.print() + " <br> <br>\n    <u> manager </u> <br>  " + manager.print() + " <br> <br>\n    <u> creditCard </u> <br> " + creditCard.print() + " <br> <br>\n    <u> customer </u> <br> " + customer.print() + " <br> <br>";
 }
 main();
