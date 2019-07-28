@@ -1,18 +1,18 @@
 "use strict";
 
 abstract class Question {
-    private _qText: string;
+    protected _qText: string;
 
-    set qText(x: string) {
+    protected set qText(x: string) {
         this._qText = x;
     }
 
-    constructor(qText: string) {
-        this.qText = qText;
+    constructor(qwestionText: string) {
+        this.qText = qwestionText;
     }
 
-    public toString(): string {
-        return `${this._qText}`;
+    protected toString(): string {
+        return this._qText;
     }
 
     public abstract getCorrectAnswer(): string;
@@ -27,11 +27,11 @@ class shortAnswerQuestion extends Question {
         this.answer = answer;
     }
 
-    getCorrectAnswer(): string {
+    public getCorrectAnswer(): string {
         return `right answer: ${this.answer}`;
     }
-    addCorrectAnswer(answer: string): void {
-        this.answer = answer;
+    public addCorrectAnswer(correctAnswer: string): void {
+        this.answer = correctAnswer;
     }
 }
 
@@ -40,22 +40,26 @@ class multipleChoiceQuestion extends Question {
     numbersOfAnswers: number;
     correctAnswerIndex: number;
 
-    constructor(answers: string[], numbersOfAnswers: number, correctAnswerIndex: number, answer: string, question: string) {
+    constructor(correctAnswer: string, question: string) {
         super(question);
-        this.numbersOfAnswers = numbersOfAnswers;
-        this.correctAnswerIndex = correctAnswerIndex;
-        this.answers[0] = answer[correctAnswerIndex];
+        this.numbersOfAnswers = 1;
+        this.correctAnswerIndex = 0;
+        this.answers = [correctAnswer];
     }
 
-    toString(): string {
-        return `question: ${super.toString()} <br>
+    public toString(): string {
+        let printAnswers;
+        for (let i = 0; i < (this.answers).length; i++) {
+            printAnswers += `${this.answers[i]} \n`;
+        }
+        return `question: ${super.toString()} \n
         * ${this.answers}`;
     }
 
-    getCorrectAnswer(): string {
-        return `right answer: ${this.answer}`;
+    public getCorrectAnswer(): string {
+        return `right answer: ${this.answers[0]}`;
     }
-    addCorrectAnswer(answer: string): void {
+    public addCorrectAnswer(answer: string): void {
         this.answer = answer;
     }
 
