@@ -1,21 +1,14 @@
 /* 1. needs to add: 
-    * painting the shapes
 2. put each class on different file and connect between them.
 3. go over the code and see if there are any problems.
 4. אלו מחלקות בדיוק צריכות להיות כאן (abstract / concrete)?
 אלו פונקציות אבסטרקטיות צריכות להיות כאן?
-
-בנוסף, צרו interface בשם IDrawable המכיל פונקציה בשם draw המציירת את הצורה על המסך.
-ממשו את הממשק הזה במחלקה Rectangle ובמחלקה Square כך שרק המחלקות הללו יצירו את עצמן על המסך ע"י צורת כוכביות מלאה לפי מימדי הצורה בלבד (לצייר עיגול כוכביות זה יהיה טרוף מאש הגיהנום כרגע, אז אנו רוצים לממש את הממשק הזה רק עבור מלבן ועבור ריבוע.
-עבור ריבוע יש לצייר ריבוע של כוכביות לפי הצלע.
-עבור המלבן יש לצייר מלבן כוכביות לפי הרוחב והגובה.
-
-בתוכנית הראשית צרו אובייקט אחד מכל צורה (עיגול, ריבוע, מלבן) וקיראו לכל אחת מהפונקציות שיש בו בכדי לראות שהכל עובד כמו שצריך.
-
 */
 
 "use strict";
-
+interface drawShape {
+    draw();
+}
 abstract class Shape {
     public X: number;
     public Y: number;
@@ -26,13 +19,12 @@ abstract class Shape {
         this.Y = Y;
         this.Color = Color;
     }
-
-    protected print(): string {
-        return `X: ${this.X} <br>
-        Y: ${this.Y} <br>
-        Color: ${this.Color} <br>`;
-    };
-
+    public print() {
+        return `
+        X: ${this.X}
+        Y: ${this.Y}
+        Color: ${this.Color}`
+    }
     abstract surfaceAreaCalculation();
     abstract scopeCalculation();
 }
@@ -46,7 +38,9 @@ class Circle extends Shape {
     }
 
     print(): string {
-        return `${super.print()} Radius: ${this.Radius}`;
+        return `Circle:
+       ${super.print()}
+        Radius: ${this.Radius}`;
     }
 
     surfaceAreaCalculation(): string {
@@ -62,7 +56,7 @@ class Circle extends Shape {
     }
 }
 
-class Square extends Shape {
+class Square extends Shape implements drawShape {
     public SidesLength: number;
 
     constructor(SidesLength: number, X: number, Y: number, Color: string) {
@@ -71,7 +65,9 @@ class Square extends Shape {
     }
 
     print(): string {
-        return `${super.print()} Sides Length: ${this.SidesLength}`;
+        return `Square:
+       ${super.print()}
+        Sides Length: ${this.SidesLength}`;
     }
 
     surfaceAreaCalculation(): string {
@@ -83,9 +79,26 @@ class Square extends Shape {
         // 4 * SidesLength
         return `the scope area of the circle is: ${4 * this.SidesLength}`;
     }
+
+    draw() {
+        let _draw = '';
+        for (let i = 0; i < this.SidesLength; i++) {
+            for (let j = 0; j < this.SidesLength; j++) {
+                if (i == 0 || i == this.SidesLength - 1) {
+                    _draw += '*';
+                } else if (j == 0 || j == this.SidesLength - 1) {
+                    _draw += '*';
+                } else {
+                    _draw += ' ';
+                }
+            }
+            _draw += '\n';
+        }
+        return _draw;
+    }
 }
 
-class Rectangle extends Shape {
+class Rectangle extends Shape implements drawShape {
     public Length: number;
     public Height: number;
 
@@ -96,7 +109,10 @@ class Rectangle extends Shape {
     }
 
     print(): string {
-        return `${super.print()} Length: ${this.Length} <br> Height: ${this.Height}`;
+        return `Rectangle:
+       ${super.print()}
+        Length: ${this.Length}
+        Height: ${this.Height}`;
     }
 
     surfaceAreaCalculation(): string {
@@ -108,16 +124,46 @@ class Rectangle extends Shape {
         // 2 * (Length + Height)
         return `the scope area of the circle is: ${2 * (this.Length + this.Height)}`;
     }
+
+    draw() {
+        let _draw = '';
+        for (let i = 0; i < this.Length; i++) {
+            for (let j = 0; j < this.Height; j++) {
+                if (i == 0 || i == this.Length - 1) {
+                    _draw += '*';
+                } else if (j == 0 || j == this.Height - 1) {
+                    _draw += '*';
+                } else {
+                    _draw += ' ';
+                }
+            }
+            _draw += '\n'
+        }
+        return _draw;
+    }
 }
 
 function main() {
     let circle = new Circle(1, 2, 3, 'blue');
     let square = new Square(5, 5, 6, 'green');
-    let rectangle = new Rectangle(7, 8, 9, 10, 'purple');
+    let rectangle = new Rectangle(20, 20, 9, 10, 'purple');
 
-    let toPrint = document.getElementById('toPrint');
-    toPrint.innerHTML = `<u>Circle</u> <br> ${circle.print()} <br> ${circle.surfaceAreaCalculation()} <br> ${circle.scopeCalculation()} <br> <br>
-    <u>Square</u> <br> ${square.print()} <br> ${square.surfaceAreaCalculation()} <br> ${square.scopeCalculation()} <br> <br>
-    <u>Rectangle</u> <br> ${rectangle.print()} <br> ${rectangle.surfaceAreaCalculation()} <br> ${rectangle.scopeCalculation()}`;
+    /*  let toPrint = document.getElementById('toPrint');
+     toPrint.innerHTML = `<u>Circle</u> <br> ${circle.print()} <br> ${circle.surfaceAreaCalculation()} <br>
+     ${circle.scopeCalculation()} <br> <br>
+     <u>Square</u> <br> ${square.draw()} <br> <br>
+     <u>Rectangle</u> <br> ${rectangle.draw()}`;
+  */
+    console.log(circle.print());
+    console.log(square.print());
+    console.log(rectangle.print());
+    console.log(circle.surfaceAreaCalculation());
+    console.log(square.surfaceAreaCalculation());
+    console.log(rectangle.surfaceAreaCalculation());
+    console.log(circle.scopeCalculation());
+    console.log(square.scopeCalculation());
+    console.log(rectangle.scopeCalculation());
+    console.log(square.draw());
+    console.log(rectangle.draw());
 }
 main();

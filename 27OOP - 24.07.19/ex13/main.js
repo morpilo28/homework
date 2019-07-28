@@ -1,26 +1,14 @@
 /* 1. needs to add:
-    * painting the shapes
 2. put each class on different file and connect between them.
 3. go over the code and see if there are any problems.
 4. אלו מחלקות בדיוק צריכות להיות כאן (abstract / concrete)?
 אלו פונקציות אבסטרקטיות צריכות להיות כאן?
-
-בנוסף, צרו interface בשם IDrawable המכיל פונקציה בשם draw המציירת את הצורה על המסך.
-ממשו את הממשק הזה במחלקה Rectangle ובמחלקה Square כך שרק המחלקות הללו יצירו את עצמן על המסך ע"י צורת כוכביות מלאה לפי מימדי הצורה בלבד (לצייר עיגול כוכביות זה יהיה טרוף מאש הגיהנום כרגע, אז אנו רוצים לממש את הממשק הזה רק עבור מלבן ועבור ריבוע.
-עבור ריבוע יש לצייר ריבוע של כוכביות לפי הצלע.
-עבור המלבן יש לצייר מלבן כוכביות לפי הרוחב והגובה.
-
-בתוכנית הראשית צרו אובייקט אחד מכל צורה (עיגול, ריבוע, מלבן) וקיראו לכל אחת מהפונקציות שיש בו בכדי לראות שהכל עובד כמו שצריך.
-
 */
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -34,9 +22,8 @@ var Shape = /** @class */ (function () {
         this.Color = Color;
     }
     Shape.prototype.print = function () {
-        return "X: " + this.X + " <br>\n        Y: " + this.Y + " <br>\n        Color: " + this.Color + " <br>";
+        return "\n        X: " + this.X + "\n        Y: " + this.Y + "\n        Color: " + this.Color;
     };
-    ;
     return Shape;
 }());
 var Circle = /** @class */ (function (_super) {
@@ -47,7 +34,7 @@ var Circle = /** @class */ (function (_super) {
         return _this;
     }
     Circle.prototype.print = function () {
-        return _super.prototype.print.call(this) + " Radius: " + this.Radius;
+        return "Circle:\n       " + _super.prototype.print.call(this) + "\n        Radius: " + this.Radius;
     };
     Circle.prototype.surfaceAreaCalculation = function () {
         // Radius * Radius * PI
@@ -69,7 +56,7 @@ var Square = /** @class */ (function (_super) {
         return _this;
     }
     Square.prototype.print = function () {
-        return _super.prototype.print.call(this) + " Sides Length: " + this.SidesLength;
+        return "Square:\n       " + _super.prototype.print.call(this) + "\n        Sides Length: " + this.SidesLength;
     };
     Square.prototype.surfaceAreaCalculation = function () {
         // SidesLength * SidesLength
@@ -78,6 +65,24 @@ var Square = /** @class */ (function (_super) {
     Square.prototype.scopeCalculation = function () {
         // 4 * SidesLength
         return "the scope area of the circle is: " + 4 * this.SidesLength;
+    };
+    Square.prototype.draw = function () {
+        var _draw = '';
+        for (var i = 0; i < this.SidesLength; i++) {
+            for (var j = 0; j < this.SidesLength; j++) {
+                if (i == 0 || i == this.SidesLength - 1) {
+                    _draw += '*';
+                }
+                else if (j == 0 || j == this.SidesLength - 1) {
+                    _draw += '*';
+                }
+                else {
+                    _draw += ' ';
+                }
+            }
+            _draw += '\n';
+        }
+        return _draw;
     };
     return Square;
 }(Shape));
@@ -90,7 +95,7 @@ var Rectangle = /** @class */ (function (_super) {
         return _this;
     }
     Rectangle.prototype.print = function () {
-        return _super.prototype.print.call(this) + " Length: " + this.Length + " <br> Height: " + this.Height;
+        return "Rectangle:\n       " + _super.prototype.print.call(this) + "\n        Length: " + this.Length + "\n        Height: " + this.Height;
     };
     Rectangle.prototype.surfaceAreaCalculation = function () {
         // Length * Height
@@ -100,13 +105,46 @@ var Rectangle = /** @class */ (function (_super) {
         // 2 * (Length + Height)
         return "the scope area of the circle is: " + 2 * (this.Length + this.Height);
     };
+    Rectangle.prototype.draw = function () {
+        var _draw = '';
+        for (var i = 0; i < this.Length; i++) {
+            for (var j = 0; j < this.Height; j++) {
+                if (i == 0 || i == this.Length - 1) {
+                    _draw += '*';
+                }
+                else if (j == 0 || j == this.Height - 1) {
+                    _draw += '*';
+                }
+                else {
+                    _draw += ' ';
+                }
+            }
+            _draw += '\n';
+        }
+        return _draw;
+    };
     return Rectangle;
 }(Shape));
 function main() {
     var circle = new Circle(1, 2, 3, 'blue');
     var square = new Square(5, 5, 6, 'green');
-    var rectangle = new Rectangle(7, 8, 9, 10, 'purple');
-    var toPrint = document.getElementById('toPrint');
-    toPrint.innerHTML = "<u>Circle</u> <br> " + circle.print() + " <br> " + circle.surfaceAreaCalculation() + " <br> " + circle.scopeCalculation() + " <br> <br>\n    <u>Square</u> <br> " + square.print() + " <br> " + square.surfaceAreaCalculation() + " <br> " + square.scopeCalculation() + " <br> <br>\n    <u>Rectangle</u> <br> " + rectangle.print() + " <br> " + rectangle.surfaceAreaCalculation() + " <br> " + rectangle.scopeCalculation();
+    var rectangle = new Rectangle(20, 20, 9, 10, 'purple');
+    /*  let toPrint = document.getElementById('toPrint');
+     toPrint.innerHTML = `<u>Circle</u> <br> ${circle.print()} <br> ${circle.surfaceAreaCalculation()} <br>
+     ${circle.scopeCalculation()} <br> <br>
+     <u>Square</u> <br> ${square.draw()} <br> <br>
+     <u>Rectangle</u> <br> ${rectangle.draw()}`;
+  */
+    console.log(circle.print());
+    console.log(square.print());
+    console.log(rectangle.print());
+    console.log(circle.surfaceAreaCalculation());
+    console.log(square.surfaceAreaCalculation());
+    console.log(rectangle.surfaceAreaCalculation());
+    console.log(circle.scopeCalculation());
+    console.log(square.scopeCalculation());
+    console.log(rectangle.scopeCalculation());
+    console.log(square.draw());
+    console.log(rectangle.draw());
 }
 main();
