@@ -1,8 +1,11 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10,57 +13,101 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Question = /** @class */ (function () {
-    function Question(qwestionText) {
-        this.qText = qwestionText;
+    function Question(questionText) {
+        this.QText = questionText;
     }
-    Object.defineProperty(Question.prototype, "qText", {
+    Object.defineProperty(Question.prototype, "QText", {
         set: function (x) {
-            this._qText = x;
+            this._QText = x;
         },
         enumerable: true,
         configurable: true
     });
     Question.prototype.toString = function () {
-        return this._qText;
+        return this._QText;
     };
     return Question;
 }());
-var shortAnswerQuestion = /** @class */ (function (_super) {
-    __extends(shortAnswerQuestion, _super);
-    function shortAnswerQuestion(answer, question) {
+var ShortAnswerQuestion = /** @class */ (function (_super) {
+    __extends(ShortAnswerQuestion, _super);
+    function ShortAnswerQuestion(answer, question) {
         var _this = _super.call(this, question) || this;
         _this.answer = answer;
         return _this;
     }
-    shortAnswerQuestion.prototype.getCorrectAnswer = function () {
+    ShortAnswerQuestion.prototype.getCorrectAnswer = function () {
         return "right answer: " + this.answer;
     };
-    shortAnswerQuestion.prototype.addCorrectAnswer = function (correctAnswer) {
+    ShortAnswerQuestion.prototype.addCorrectAnswer = function (correctAnswer) {
         this.answer = correctAnswer;
     };
-    return shortAnswerQuestion;
+    return ShortAnswerQuestion;
 }(Question));
-var multipleChoiceQuestion = /** @class */ (function (_super) {
-    __extends(multipleChoiceQuestion, _super);
-    function multipleChoiceQuestion(correctAnswer, question) {
+var MultipleChoiceQuestion = /** @class */ (function (_super) {
+    __extends(MultipleChoiceQuestion, _super);
+    function MultipleChoiceQuestion(correctAnswer, question) {
         var _this = _super.call(this, question) || this;
         _this.numbersOfAnswers = 1;
         _this.correctAnswerIndex = 0;
         _this.answers = [correctAnswer];
         return _this;
     }
-    multipleChoiceQuestion.prototype.toString = function () {
+    MultipleChoiceQuestion.prototype.toString = function () {
         var printAnswers;
         for (var i = 0; i < (this.answers).length; i++) {
-            printAnswers += this.answers[i] + " \n";
+            if (i < 6) {
+                printAnswers += "\n * " + this.answers[i] + " \n";
+            }
         }
-        return "question: " + _super.prototype.toString.call(this) + " \n\n        * " + this.answers;
+        console.log(printAnswers);
+        return "question: " + _super.prototype.toString.call(this) + " \n " + printAnswers;
     };
-    multipleChoiceQuestion.prototype.getCorrectAnswer = function () {
+    MultipleChoiceQuestion.prototype.getCorrectAnswer = function () {
         return "right answer: " + this.answers[0];
     };
-    multipleChoiceQuestion.prototype.addCorrectAnswer = function (answer) {
-        this.answer = answer;
+    MultipleChoiceQuestion.prototype.addCorrectAnswer = function (answer) {
+        if ((this.answers).length !== 6) {
+            this.answers.push(answer);
+            this.correctAnswerIndex = (this.answers).length - 1;
+        }
     };
-    return multipleChoiceQuestion;
+    MultipleChoiceQuestion.prototype.addAnswer = function (wrongAnswer) {
+        if ((this.answers).length !== 6) {
+            this.answers.push(wrongAnswer);
+        }
+    };
+    return MultipleChoiceQuestion;
 }(Question));
+var QuestionsCatalog = /** @class */ (function () {
+    function QuestionsCatalog() {
+        this.maxQuestionsLength = 20;
+        this.questions = [];
+        this.currentNumOfQuestions = 0;
+    }
+    QuestionsCatalog.prototype.addQuestion = function (q) {
+        if ((this.questions).length !== this.maxQuestionsLength) {
+            this.questions.push(q);
+        }
+    };
+    QuestionsCatalog.prototype.generateQuestionnaire = function (num, type) {
+        type = QuestionsCatalog.SHORT || QuestionsCatalog.MULTIPLE || QuestionsCatalog.BOTH;
+        var newQuestionnaire = [];
+        newQuestionnaire.length = num;
+        for (var i = 0; i < (this.questions).length; i++) {
+        }
+        return newQuestionnaire;
+    };
+    QuestionsCatalog.SHORT = 1;
+    QuestionsCatalog.MULTIPLE = 2;
+    QuestionsCatalog.BOTH = 3;
+    return QuestionsCatalog;
+}());
+var Questionnaire = /** @class */ (function () {
+    function Questionnaire(type, num, cat) {
+        this.type = type;
+        this.num = num;
+        this.cat = cat;
+        //this.numOfCorrectAnswers=0;
+    }
+    return Questionnaire;
+}());
