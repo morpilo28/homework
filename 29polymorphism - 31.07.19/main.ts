@@ -1,7 +1,14 @@
+/*  1. in the exercise function reporter doesn't returns anything, how am is suppose to see what happens besides console.log.
+    2. needs to check if Graphics.showShapes() works.
+    3. check why radius always equal the same number (when i call Graphics.showShapes()).
+*/
+
 "use strict";
+
 interface drawShape {
     draw();
 }
+
 abstract class Shape {
     public X: number;
     public Y: number;
@@ -23,34 +30,34 @@ abstract class Shape {
 }
 
 class Circle extends Shape {
-    public Radius: number;
+    static Radius: number;
 
     constructor(Radius: number, X: number, Y: number, Color: string, ) {
         super(X, Y, Color);
-        this.Radius = Radius;
+        Circle.Radius = Radius;
     }
 
     print(): string {
         return `Circle:
        ${super.print()}
-        Radius: ${this.Radius}`;
+        Radius: ${Circle.Radius}`;
     }
 
     surfaceAreaCalculation(): string {
         // Radius * Radius * PI
         const Pi = 3.14;
-        return `the surface area of the circle is: ${Math.floor(this.Radius * this.Radius * Pi)}`;
+        return `the surface area of the circle is: ${Math.floor(Circle.Radius * Circle.Radius * Pi)}`;
     }
 
     scopeCalculation(): string {
         // 2 * PI * Radius
         const Pi = 3.14;
-        return `the scope area of the circle is: ${Math.floor(2 * Pi * this.Radius)}`;
+        return `the scope area of the circle is: ${Math.floor(2 * Pi * Circle.Radius)}`;
     }
 }
 
 class Square extends Shape implements drawShape {
-    public SidesLength: number;
+    private SidesLength: number;
 
     constructor(SidesLength: number, X: number, Y: number, Color: string) {
         super(X, Y, Color);
@@ -65,12 +72,12 @@ class Square extends Shape implements drawShape {
 
     surfaceAreaCalculation(): string {
         // SidesLength * SidesLength
-        return `the surface area of the circle is: ${this.SidesLength * this.SidesLength}`;
+        return `the surface area of the Square is: ${this.SidesLength * this.SidesLength}`;
     }
 
     scopeCalculation(): string {
         // 4 * SidesLength
-        return `the scope area of the circle is: ${4 * this.SidesLength}`;
+        return `the scope area of the Square is: ${4 * this.SidesLength}`;
     }
 
     draw() {
@@ -110,12 +117,12 @@ class Rectangle extends Shape implements drawShape {
 
     surfaceAreaCalculation(): string {
         // Length * Height
-        return `the surface area of the circle is: ${this.Length * this.Height}`;
+        return `the surface area of the Rectangle is: ${this.Length * this.Height}`;
     }
 
     scopeCalculation(): string {
         // 2 * (Length + Height)
-        return `the scope area of the circle is: ${2 * (this.Length + this.Height)}`;
+        return `the scope area of the Rectangle is: ${2 * (this.Length + this.Height)}`;
     }
 
     draw() {
@@ -138,60 +145,70 @@ class Rectangle extends Shape implements drawShape {
 
 class Tester {
     public static test(): void {
-        let randomeShape: Shape;
-
+        let randomShape: Shape;
         let randomNum = Math.floor(Math.random() * 3) + 1;
         console.log(randomNum);
-        console.log(randomNum);
         if (randomNum == 1) {
-            randomeShape = new Circle(1, 2, 3, 'blue');
-            console.log(`${randomeShape.print()} \n ${randomeShape.surfaceAreaCalculation()} \n ${randomeShape.scopeCalculation()}`);
+            randomShape = new Circle(1, 2, 3, 'blue');
+            console.log(`${randomShape.print()} \n ${randomShape.surfaceAreaCalculation()} \n ${randomShape.scopeCalculation()} \n diameter: ${Circle.Radius * 2}`);
         } else if (randomNum == 2) {
-            randomeShape = new Square(5, 5, 6, 'green');
-            console.log(`${randomeShape.print()} \n ${randomeShape.surfaceAreaCalculation()} \n ${randomeShape.scopeCalculation()}`);
+            randomShape = new Square(5, 5, 6, 'green');
+            console.log(`${randomShape.print()} \n ${randomShape.surfaceAreaCalculation()} \n ${randomShape.scopeCalculation()}`);
         } else if (randomNum == 3) {
-            randomeShape = new Rectangle(20, 20, 9, 10, 'purple');
-            console.log(`${randomeShape.print()} \n ${randomeShape.surfaceAreaCalculation()} \n ${randomeShape.scopeCalculation()}`);
+            randomShape = new Rectangle(20, 20, 9, 10, 'purple');
+            console.log(`${randomShape.print()} \n ${randomShape.surfaceAreaCalculation()} \n ${randomShape.scopeCalculation()}`);
         }
     }
 }
-/* 
+
 class Reporter {
     public showReport(s: Shape): void {
-        // ...
+        let z = `${s.print()} \n ${s.surfaceAreaCalculation()} \n ${s.scopeCalculation()}`;
+        if (s instanceof Square || s instanceof Rectangle) {
+            console.log(`${z} \n${s.draw()}`);
+        } else {
+            console.log(z);
+        }
     }
 }
 
 class Graphics {
     public static showShapes(): void {
-        // ...
+        let array = [];
+        array.length = 20;
+        let colorsArray = ['gray', 'black', 'white'];
+        for (let i = 0; i < array.length; i++) {
+            let randomNum = Math.floor(Math.random() * 3) + 1;
+            if (randomNum == 1) {
+                array[i] = new Circle((Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), colorsArray[Math.floor(Math.random() * 2)]);
+            } else if (randomNum == 2) {
+                array[i] = new Square((Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), colorsArray[Math.floor(Math.random() * 2)]);
+            } else if (randomNum == 3) {
+                array[i] = new Rectangle((Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), (Math.floor(Math.random() * 10) + 1), colorsArray[Math.floor(Math.random() * 2)]);
+            }
+        }
+        console.log(array);
+        for (let i = 0; i < array.length; i++) {
+            let z = `${array[i].print()} \n ${array[i].surfaceAreaCalculation()} \n ${array[i].scopeCalculation()}`;
+            if (array[i] instanceof Square || array[i] instanceof Rectangle) {
+                console.log(`${z} \n${array[i].draw()}`);
+            } else {
+                console.log(`${z} \n diameter: ${Circle.Radius * 2}`);
+            }
+        }
     }
-} */
+}
 
-
-/* function main() {
+function main() {
+    Tester.test();
     let circle = new Circle(1, 2, 3, 'blue');
     let square = new Square(5, 5, 6, 'green');
     let rectangle = new Rectangle(20, 20, 9, 10, 'purple');
-
-    //let toPrint = document.getElementById('toPrint');
-    //toPrint.innerHTML = `<u>Circle</u> <br> ${circle.print()} <br> ${circle.surfaceAreaCalculation()} <br>
-    //${circle.scopeCalculation()} <br> <br>
-    //<u>Square</u> <br> ${square.draw()} <br> <br>
-    //<u>Rectangle</u> <br> ${rectangle.draw()}`; 
-
-    console.log(circle.print());
-    console.log(square.print());
-    console.log(rectangle.print());
-    console.log(circle.surfaceAreaCalculation());
-    console.log(square.surfaceAreaCalculation());
-    console.log(rectangle.surfaceAreaCalculation());
-    console.log(circle.scopeCalculation());
-    console.log(square.scopeCalculation());
-    console.log(rectangle.scopeCalculation());
-    console.log(square.draw());
-    console.log(rectangle.draw());
-
+    let ReporterObj = new Reporter;
+    ReporterObj.showReport(circle);
+    ReporterObj.showReport(square);
+    ReporterObj.showReport(rectangle);
+    Graphics.showShapes();
 }
-main(); */
-Tester.test();
+
+main();
