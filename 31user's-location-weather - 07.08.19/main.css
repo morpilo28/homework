@@ -1,0 +1,36 @@
+#weatherForFewCities,
+#dropTo {
+    border: 1px solid black;
+    text-align: center;
+
+}
+
+#weatherBox {
+    width: 235px;
+    height: 52px;
+    padding: 5px;
+    margin-bottom: 46px;
+}
+
+#weatherForFewCities {
+    width: 224px;
+    height: 234px;
+    background-color: lightsalmon;
+}
+
+.city {
+    width: 223px;
+    height: 37px;
+    margin-top: 17px;
+    color: blueviolet;
+}
+
+#dropTo {
+    width: 223px;
+    height: 234px;
+    padding: 0px 5px 0px 5px;
+    margin-left: 336px;
+    margin-top: -236px;
+    background-color: bisque;
+    overflow: auto;
+}
