@@ -1,6 +1,7 @@
 /*  1. in the exercise function reporter doesn't returns anything, how am is suppose to see what happens besides console.log.
     2. needs to check if Graphics.showShapes() works.
-    3. check why radius always equal the same number.
+    3. check why radius always equal the same number (when i call Graphics.showShapes()).
+    4. check if i used the polymorphism correctly.
 */
 "use strict";
 var __extends = (this && this.__extends) || (function () {
