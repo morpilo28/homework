@@ -1,5 +1,3 @@
-/* needs to check why the cities disappear when put on each other */
-
 "use strict";
 
 function main() {
@@ -8,6 +6,7 @@ function main() {
     if (window.localStorage.getItem('name') != null) {
         deleteLoginBox();
         usersLocationWeatherPage();
+        otherCitiesWeather();
     } else {
         document.getElementById('loginButton').addEventListener('click', function () {
             let isChecked = document.getElementById('checkbox');
@@ -73,7 +72,6 @@ function usersLocationWeatherPage() {
     let weatherBox = document.createElement('div');
     weatherBox.id = 'weatherBox';
     document.body.appendChild(weatherBox);
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, noPermission);
     } else {
@@ -84,7 +82,6 @@ function usersLocationWeatherPage() {
 function showPosition(position) {
     let latitude = Math.floor(position.coords.latitude);
     let longitude = Math.floor(position.coords.longitude);
-
     var url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=32b777ae23bb546c5cc3f439ec42caa5`;
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url);
@@ -92,7 +89,9 @@ function showPosition(position) {
 
     oReq.addEventListener("load", function () {
         var obj = JSON.parse(this.responseText);
-        weatherBox.innerHTML = `<u>Your Location</u> <br> City: ${obj.name} <br> temp: ${obj.main.temp}`;
+        console.log(obj);
+        let weatherInCelsius = (obj.main.temp) - 273.15;
+        weatherBox.innerHTML = `<u>Your Location</u> <br> City: ${obj.name} <br> temp: ${Math.floor(weatherInCelsius)} &#8451`;
     });
 }
 
@@ -158,9 +157,10 @@ function drag(event) {
 
 function drop(event) {
     event.preventDefault();
+    let parentElement = document.getElementById('dropTo');
     let cityBoxId = event.dataTransfer.getData("text");
     TempOfCity(cityBoxId);
-    event.target.appendChild(document.getElementById(cityBoxId));
+    parentElement.appendChild(document.getElementById(cityBoxId));
 }
 
 function TempOfCity(cityName) {
@@ -172,16 +172,18 @@ function TempOfCity(cityName) {
     oReq.addEventListener("load", function () {
         let obj = JSON.parse(this.responseText);
         let cityBoxWithTemp = document.getElementById(cityName);
-        cityBoxWithTemp.innerText = `${obj.name} \n Temp: ${obj.main.temp}`;
+        let weatherInCelsius = (obj.main.temp) - 273.15;
+        cityBoxWithTemp.innerHTML = `${obj.name} \n Temp: ${Math.floor(weatherInCelsius)} &#8451`;
     });
 }
 
 function dropBack() {
     event.preventDefault();
+    let parentElement = document.getElementById('weatherForFewCities');
     let cityBoxId = event.dataTransfer.getData("text");
     let cityBoxWithoutTemp = document.getElementById(cityBoxId);
     cityBoxWithoutTemp.innerText = cityBoxId;
-    event.target.appendChild(document.getElementById(cityBoxId));
+    parentElement.appendChild(document.getElementById(cityBoxId));
 }
 
 main();
