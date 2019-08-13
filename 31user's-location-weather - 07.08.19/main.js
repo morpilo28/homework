@@ -82,7 +82,7 @@ function usersLocationWeatherPage() {
 function showPosition(position) {
     let latitude = Math.floor(position.coords.latitude);
     let longitude = Math.floor(position.coords.longitude);
-    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=32b777ae23bb546c5cc3f439ec42caa5`;
+    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=32b777ae23bb546c5cc3f439ec42caa5`;
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url);
     oReq.send();
@@ -90,8 +90,7 @@ function showPosition(position) {
     oReq.addEventListener("load", function () {
         var obj = JSON.parse(this.responseText);
         console.log(obj);
-        let weatherInCelsius = (obj.main.temp) - 273.15;
-        weatherBox.innerHTML = `<u>Your Location</u> <br> City: ${obj.name} <br> temp: ${Math.floor(weatherInCelsius)} &#8451`;
+        weatherBox.innerHTML = `<u>Your Location</u> <br> City: ${obj.name} <br> temp: ${Math.floor(obj.main.temp)} &#8451`;
     });
 }
 
@@ -164,7 +163,7 @@ function drop(event) {
 }
 
 function TempOfCity(cityName) {
-    var url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=32b777ae23bb546c5cc3f439ec42caa5`;
+    var url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=32b777ae23bb546c5cc3f439ec42caa5`;
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url);
     oReq.send();
@@ -172,8 +171,7 @@ function TempOfCity(cityName) {
     oReq.addEventListener("load", function () {
         let obj = JSON.parse(this.responseText);
         let cityBoxWithTemp = document.getElementById(cityName);
-        let weatherInCelsius = (obj.main.temp) - 273.15;
-        cityBoxWithTemp.innerHTML = `${obj.name} \n Temp: ${Math.floor(weatherInCelsius)} &#8451`;
+        cityBoxWithTemp.innerHTML = `${obj.name} \n Temp: ${Math.floor(obj.main.temp)} &#8451`;
     });
 }
 
