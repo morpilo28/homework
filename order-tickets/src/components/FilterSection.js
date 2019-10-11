@@ -6,8 +6,8 @@ function FilterSection(props) {
   let cities = useSelector(state => state && state.cities);
 
   return <div className={"filter-section"}>
-    <FilterDropdown filteredField={"fromCity"} options={cities} />
-    <FilterDropdown filteredField={"toCity"} options={cities} />
+    <FilterDropdown filteredField={"fromCity"} options={cities} placeholder={"From"} />
+    <FilterDropdown filteredField={"toCity"} options={cities} placeholder={"To" }/>
   </div>;
 }
 
