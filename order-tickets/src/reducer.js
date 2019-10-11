@@ -1,5 +1,24 @@
 import actionTypes from "./actionTypes";
 import trips from "./trips";
+import {getDayString, getNextDay} from "./dateUtils";
+
+function getPickableDaysStartingFrom(day, trips) {
+  let currentDay = day;
+  let days = [];
+  for (let i = 0; i < 7; i++) {
+    let dayData = {
+      day: new Date(currentDay),
+      displayText: currentDay,
+      lowestPrice: Math.min(...(trips.filter(trip => trip.day === currentDay).map(trip => trip.price)), )
+    };
+    if (dayData.lowestPrice === Infinity) {
+      dayData.lowestPrice = 0;
+    }
+    days.push(dayData);
+    currentDay = getDayString(getNextDay(dayData.day));
+  }
+  return days;
+}
 
 const initialState = {
   trips: trips,
@@ -10,7 +29,8 @@ const initialState = {
     departureDate: null,
     returnDate: null
   },
-  sortBy: "departure"
+  sortBy: "departure",
+  pickableDays: getPickableDaysStartingFrom("Wed, Sept 25", trips)
 };
 
 function getCitiesFromTrips(trips) {
