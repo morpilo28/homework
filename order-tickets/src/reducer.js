@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 import trips from "./trips";
-import {getDayString, getNextDay} from "./dateUtils";
+import {getDayString, datePlusDays} from "./dateUtils";
 
 function getPickableDaysStartingFrom(day, trips) {
   let currentDay = day;
@@ -15,7 +15,7 @@ function getPickableDaysStartingFrom(day, trips) {
       dayData.lowestPrice = 0;
     }
     days.push(dayData);
-    currentDay = getDayString(getNextDay(dayData.day));
+    currentDay = getDayString(datePlusDays(dayData.day, 1));
   }
   return days;
 }
@@ -76,6 +76,10 @@ function reducer(state = initialState, action) {
     case actionTypes.TRIPS_LOADED:
       break;
     case actionTypes.SORT_CHANGE:
+      break;
+    case actionTypes.MOVE_DAY_PICKER:
+      let currentDay = state.pickableDays[0].day;
+      newState.pickableDays = getPickableDaysStartingFrom(getDayString(datePlusDays(currentDay, action.byDays)), newState.trips);
       break;
     default:
       break;

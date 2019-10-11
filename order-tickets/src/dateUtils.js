@@ -1,6 +1,6 @@
-export function getNextDay(date) {
+export function datePlusDays(date, plusDays) {
   let resultDate = new Date(date.valueOf());
-  resultDate.setDate(resultDate.getDate() + 1);
+  resultDate.setDate(resultDate.getDate() + plusDays);
   return resultDate;
 }
 
