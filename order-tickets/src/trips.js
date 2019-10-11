@@ -14,7 +14,7 @@ export default [
 
   {
     "day": "Wed, Sept 25",
-    "departure": "13:01 PM",
+    "departure": "1:01 PM",
     "duration": "4h19m",
     "arrival": "5:20 PM",
     "operator": "citilink",
@@ -53,9 +53,9 @@ export default [
 
   {
     "day": "Thu, Sept 26",
-    "departure": "08:01 PM",
+    "departure": "8:01 PM",
     "duration": "4h19m",
-    "arrival": "02:20 AM",
+    "arrival": "2:20 AM",
     "operator": "Metro_Transit",
     "busId": "GLI50533",
     "price": 30,
@@ -66,7 +66,7 @@ export default [
 
   {
     "day": "Fri, Sept 27",
-    "departure": "12:01 PM",
+    "departure": "5:01 AM",
     "duration": "4h19m",
     "arrival": "4:20 PM",
     "operator": "citilink",

@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 import trips from "./trips";
-import {getDayString, datePlusDays} from "./dateUtils";
+import {getDayString, datePlusDays, parseTime} from "./dateUtils";
 
 function getPickableDaysStartingFrom(day, trips) {
   let currentDay = day;
@@ -30,6 +30,7 @@ const initialState = {
     returnDate: null
   },
   sortBy: "departure",
+  sortDirection: 1,
   pickableDays: getPickableDaysStartingFrom("Wed, Sept 25", trips)
 };
 
@@ -47,7 +48,7 @@ function getCitiesFromTrips(trips) {
   return cities;
 }
 
-function calculateDisplayedTrips(trips = [], filters, sortBy) {
+function calculateDisplayedTrips(trips = [], filters, sortBy, sortDirection) {
   const resultTrips = trips.filter(trip => {
     if (filters.fromCity && trip.from !== filters.fromCity) {
       return false;
@@ -60,9 +61,21 @@ function calculateDisplayedTrips(trips = [], filters, sortBy) {
     if (filters.departureDate && trip.day !== filters.departureDate) {
       return false;
     }
-
     return true;
   });
+
+  if (sortBy === "departure") {
+    resultTrips.sort((trip1, trip2) => {
+      return sortDirection * (parseTime(trip2.departure) - parseTime(trip1.departure));
+    });
+  }
+
+  if (sortBy === "price") {
+    resultTrips.sort((trip1, trip2) => {
+      return sortDirection * (trip1.price - trip2.price);
+    });
+  }
+
   return resultTrips;
 }
 
@@ -81,6 +94,8 @@ function reducer(state = initialState, action) {
     case actionTypes.TRIPS_LOADED:
       break;
     case actionTypes.SORT_CHANGE:
+      newState.sortBy = action.field;
+      newState.sortDirection = state.sortBy === action.field ? state.sortDirection * (-1) : 1;
       break;
     case actionTypes.MOVE_DAY_PICKER:
       let currentDay = state.pickableDays[0].day;
@@ -91,7 +106,7 @@ function reducer(state = initialState, action) {
       break;
   }
 
-  newState.displayedTrips = calculateDisplayedTrips(newState.trips, newState.filters, newState.sortBy);
+  newState.displayedTrips = calculateDisplayedTrips(newState.trips, newState.filters, newState.sortBy, newState.sortDirection);
 
   return newState;
 }

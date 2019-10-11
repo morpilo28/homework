@@ -1,4 +1,6 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
+import actionTypes from "../actionTypes";
 
 function getTripRow(trip) {
   return <div className="table-row trip-row">
@@ -21,9 +23,17 @@ function getTripRow(trip) {
 }
 
 function TripsTable(props) {
+  let dispatch = useDispatch();
+  function sortTrips(field) {
+    dispatch({
+      type: actionTypes.SORT_CHANGE,
+      field
+    });
+  }
+
   return <div className={"table"}>
     <div className="table-row trips-table-header">
-      <div className={"table-cell"}>Departure</div>
+      <div className={"table-cell"} onClick={() => sortTrips("departure")}>Departure</div>
       <div className={"table-cell"}>Duration</div>
       <div className={"table-cell"}>Arrival</div>
       <div className={"table-cell"}>
@@ -36,7 +46,7 @@ function TripsTable(props) {
         <br/>
         <span className={"sup-header"}>Features</span>
       </div>
-      <div className={"table-cell"}>
+      <div className={"table-cell"} onClick={() => sortTrips("price")}>
         <span className={"main-header"}>Price</span>
         <br/>
         <span className={"sup-header"}>per person</span>
