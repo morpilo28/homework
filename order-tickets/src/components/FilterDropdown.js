@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useDispatch} from "react-redux";
+import actionTypes from "../actionTypes";
 
 function FilterDropdown(props) {
 
@@ -16,7 +17,7 @@ function FilterDropdown(props) {
 
     setSelectedOption(value);
     let action = {
-      type: "SELECT_FILTER_CHANGE",
+      type: actionTypes.FILTER_CHANGE,
       filteredField,
       value
     };
