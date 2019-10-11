@@ -16,12 +16,20 @@ function DayPicker(props) {
 
   let days = useSelector(state => state.pickableDays);
 
+  function onDayPicked(day) {
+    dispatch({
+      type: actionTypes.FILTER_CHANGE,
+      filteredField: "departureDate",
+      value: day.displayText
+    });
+  }
+
   return <div className={"table"}>
     <div className={"table-row"}>
       <div className={"table-cell"} onClick={() => moveDays(-7)}>Previous 7 days</div>
       {
         days.map(day => {
-          return <div className={"table-cell"}>
+          return <div className={"table-cell"} onClick={() => onDayPicked(day)}>
             <span>{day.displayText}</span>
             <br/>
             <span>${day.lowestPrice}+</span>

@@ -56,6 +56,11 @@ function calculateDisplayedTrips(trips = [], filters, sortBy) {
     if (filters.toCity && trip.to !== filters.toCity) {
       return false;
     }
+
+    if (filters.departureDate && trip.day !== filters.departureDate) {
+      return false;
+    }
+
     return true;
   });
   return resultTrips;
@@ -79,7 +84,8 @@ function reducer(state = initialState, action) {
       break;
     case actionTypes.MOVE_DAY_PICKER:
       let currentDay = state.pickableDays[0].day;
-      newState.pickableDays = getPickableDaysStartingFrom(getDayString(datePlusDays(currentDay, action.byDays)), newState.trips);
+      let newStartingDay = getDayString(datePlusDays(currentDay, action.byDays));
+      newState.pickableDays = getPickableDaysStartingFrom(newStartingDay, newState.trips);
       break;
     default:
       break;
