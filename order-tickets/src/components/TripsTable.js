@@ -15,7 +15,9 @@ function getTripRow(trip) {
       <br/>
       <span className={"sup-header"}>{trip.to}</span>
     </div>
-    <div className={"table-cell"}>{trip.operator}</div>
+    <div className={"table-cell"}>
+      <img className={"operator-img"} src={"/operators/" + trip.operator + ".png"} title={trip.operator} alt={trip.operator}/>
+    </div>
     <div className={"table-cell"}>{trip.busId}</div>
     <div className={"table-cell"}>${trip.price}</div>
     <div className={"table-cell"}><a href="">Order Now</a></div>
