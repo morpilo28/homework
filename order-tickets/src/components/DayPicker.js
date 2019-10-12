@@ -22,19 +22,19 @@ function DayPicker() {
     });
   }
 
-  return <div className={"table"}>
+  return <div className={"table dayPicker"}>
     <div className={"table-row"}>
-      <div className={"table-cell"} onClick={() => moveDays(-7)}>Previous 7 days</div>
+      <div className={"table-cell dayPicker-cell moreDaysBtn"} onClick={() => moveDays(-7)}>Previous 7 days</div>
       {
         pickableDays.map(dayData => {
-          return <div className={"table-cell"} onClick={() => onDayPicked(dayData)}>
+          return <div className={"table-cell dayPicker-cell"} onClick={() => onDayPicked(dayData)}>
             <span>{dayData.displayText}</span>
             <br/>
             <span>${dayData.lowestPrice}+</span>
           </div>
         })
       }
-      <div className={"table-cell"} onClick={() => moveDays(7)}>Next 7 days</div>
+      <div className={"table-cell dayPicker-cell moreDaysBtn"} onClick={() => moveDays(7)}>Next 7 days</div>
     </div>
   </div>;
 }

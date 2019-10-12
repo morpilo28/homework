@@ -31,7 +31,7 @@ function TripsTable(props) {
     });
   }
 
-  return <div className={"table"}>
+  return <div className={"table trips-table-box"}>
     <div className="table-row trips-table-header">
       <div className={"table-cell"} onClick={() => sortTrips("departure")}>Departure</div>
       <div className={"table-cell"}>Duration</div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import actionTypes from "../actionTypes";
 
 function FilterDropdown(props) {
@@ -7,7 +7,7 @@ function FilterDropdown(props) {
   // let filteredField = props.filteredField;
   // let options = props.options;
 
-  let { filteredField, options, placeholder} = props;
+  let { filteredField, options, placeholder } = props;
 
   let [selectedOption, setSelectedOption] = useState(null);
   let dispatch = useDispatch();
@@ -25,9 +25,9 @@ function FilterDropdown(props) {
   }
 
   return <select id="from-selector"
-                 defaultValue={""}
-                 onChange={onChange}
-                 value={selectedOption}>
+    defaultValue={""}
+    onChange={onChange}
+    value={selectedOption}>
     <option value="">{placeholder}</option>
     {
       options.map(value => <option value={value}>{value}</option>)
