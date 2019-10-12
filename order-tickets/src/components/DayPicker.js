@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import actionTypes from "../actionTypes";
 
-
-
-function DayPicker(props) {
+function DayPicker() {
   let dispatch = useDispatch();
+  let pickableDays = useSelector(state => state.pickableDays);
 
   function moveDays(byDays) {
     dispatch({
       type: actionTypes.MOVE_DAY_PICKER,
       byDays
     });
-  }
 
-  let days = useSelector(state => state.pickableDays);
+  }
 
   function onDayPicked(day) {
     dispatch({
@@ -28,11 +26,11 @@ function DayPicker(props) {
     <div className={"table-row"}>
       <div className={"table-cell"} onClick={() => moveDays(-7)}>Previous 7 days</div>
       {
-        days.map(day => {
-          return <div className={"table-cell"} onClick={() => onDayPicked(day)}>
-            <span>{day.displayText}</span>
+        pickableDays.map(dayData => {
+          return <div className={"table-cell"} onClick={() => onDayPicked(dayData)}>
+            <span>{dayData.displayText}</span>
             <br/>
-            <span>${day.lowestPrice}+</span>
+            <span>${dayData.lowestPrice}+</span>
           </div>
         })
       }

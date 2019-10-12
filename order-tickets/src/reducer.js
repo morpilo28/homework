@@ -2,6 +2,20 @@ import actionTypes from "./actionTypes";
 import trips from "./trips";
 import {getDayString, datePlusDays, parseTime} from "./dateUtils";
 
+const initialState = {
+  trips: trips,
+  cities: getCitiesFromTrips(trips),
+  filters: {
+    fromCity: null,
+    toCity: null,
+    departureDate: null,
+    returnDate: null
+  },
+  sortBy: "departure",
+  sortDirection: 1,
+  pickableDays: getPickableDaysStartingFrom("Wed, Sept 25", trips)
+};
+
 function getPickableDaysStartingFrom(day, trips) {
   let currentDay = day;
   let days = [];
@@ -19,20 +33,6 @@ function getPickableDaysStartingFrom(day, trips) {
   }
   return days;
 }
-
-const initialState = {
-  trips: trips,
-  cities: getCitiesFromTrips(trips),
-  filters: {
-    fromCity: null,
-    toCity: null,
-    departureDate: null,
-    returnDate: null
-  },
-  sortBy: "departure",
-  sortDirection: 1,
-  pickableDays: getPickableDaysStartingFrom("Wed, Sept 25", trips)
-};
 
 function getCitiesFromTrips(trips) {
   let cities = [];
