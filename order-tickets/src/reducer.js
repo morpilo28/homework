@@ -2,6 +2,9 @@ import actionTypes from "./actionTypes";
 import trips from "./trips";
 import {getDayString, datePlusDays, parseTime} from "./dateUtils";
 
+let startingDayString = "Wed, Sept 25";
+let startingDay = new Date(Date.parse(startingDayString));
+
 const initialState = {
   trips: trips,
   cities: getCitiesFromTrips(trips),
@@ -13,7 +16,7 @@ const initialState = {
   },
   sortBy: "departure",
   sortDirection: 1,
-  pickableDays: getPickableDaysStartingFrom("Wed, Sept 25", trips)
+  pickableDays: getPickableDaysStartingFrom(startingDayString, trips)
 };
 
 function getPickableDaysStartingFrom(day, trips) {
@@ -99,8 +102,19 @@ function reducer(state = initialState, action) {
       break;
     case actionTypes.MOVE_DAY_PICKER:
       let currentDay = state.pickableDays[0].day;
-      let newStartingDay = getDayString(datePlusDays(currentDay, action.byDays));
-      newState.pickableDays = getPickableDaysStartingFrom(newStartingDay, newState.trips);
+      if (!(currentDay.getTime() === startingDay.getTime() && action.byDays < 0)) {
+        let newStartingDay = datePlusDays(currentDay, action.byDays);
+        const diffTime = Math.abs(newStartingDay - startingDay);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays < 28) {
+          let newStartingDayString = getDayString(newStartingDay);
+          newState.pickableDays = getPickableDaysStartingFrom(newStartingDayString, newState.trips);
+        } else {
+          alert("Cant go too far...")
+        }
+      } else {
+        alert("Cant go to the past...")
+      }
       break;
     default:
       break;
