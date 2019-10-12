@@ -17,7 +17,7 @@ function getTripRow(trip) {
     </div>
     <div className={"table-cell"}>{trip.operator}</div>
     <div className={"table-cell"}>{trip.busId}</div>
-    <div className={"table-cell"}>{trip.price}</div>
+    <div className={"table-cell"}>${trip.price}</div>
     <div className={"table-cell"}><a href="">Order Now</a></div>
   </div>
 }
