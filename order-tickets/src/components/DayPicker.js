@@ -5,6 +5,7 @@ import actionTypes from "../actionTypes";
 function DayPicker() {
   let dispatch = useDispatch();
   let pickableDays = useSelector(state => state.pickableDays);
+  let selectedDepartureDate = useSelector(state => state.filters.departureDate);
 
   function moveDays(byDays) {
     dispatch({
@@ -27,7 +28,8 @@ function DayPicker() {
       <div className={"table-cell dayPicker-cell moreDaysBtn"} onClick={() => moveDays(-7)}>Previous 7 days</div>
       {
         pickableDays.map(dayData => {
-          return <div className={"table-cell dayPicker-cell"} onClick={() => onDayPicked(dayData)}>
+
+          return <div className={"table-cell dayPicker-cell" + (selectedDepartureDate === dayData.displayText ? " selected-day" : "")} onClick={() => onDayPicked(dayData)}>
             <span>{dayData.displayText}</span>
             <br/>
             <span>${dayData.lowestPrice}+</span>
