@@ -1,22 +1,21 @@
-.App {
-  text-align: center;
+.header-container {
+  width: 100%;
+  background-color: grey;
+
 }
 
-.App-logo {
-  height: 40vmin;
+.header,
+.input-field-container,
+.mainContent {
+  width: 85%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.input-fields {
+  width: 200px;
 }
 
-.App-link {
-  color: #09d3ac;
+.single-event {
+  margin-left: 50px;
+  margin-top: -70px;
 }
