@@ -1,8 +1,7 @@
 import React from 'react'
 
 function EventBox(props) {
-    let { audience, categories, date, daytime, location, title } = props;
-
+    let { audience, categories, date, daytime, location, title} = props;
     return <div className="singleEvent">
         <main className="eventBoxMainContent">
             <div>

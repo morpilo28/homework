@@ -5,9 +5,9 @@ import actionTypes from "../actionTypes";
 function FilterDropDown(props) {
     let { id, filteredField, options, placeholder } = props;
     let [selectedOption, setSelectedOption] = useState('');
-    /* let dispatch = useDispatch(); */
+    let dispatch = useDispatch();
 
-    /* function onChange(event) {
+    function onChange(event) {
         let value = event.target.value;
 
         setSelectedOption(value);
@@ -17,10 +17,10 @@ function FilterDropDown(props) {
             value
         };
         dispatch(action);
-    } */
+    }
     return <select id={id}
         className='input-fields'
-        /* onChange={onChange} */
+        onChange={onChange}
         value={selectedOption}>
         <option>{placeholder}</option>
         {

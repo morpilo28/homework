@@ -14,7 +14,9 @@ const initialState = {
   audience: getAudienceFromEvents(events),
   category: getCategoryFromEvents(events),
   filters: {
-    dateRange: null,
+    eventDate: null,
+    audienceType: null,
+    eventCategory:null
   }
 }
 
@@ -51,5 +53,36 @@ function reducer(state = initialState, action) {
   
   return newState;
 }
+
+/*function calculateDisplayedEvents(events = [], filters) {
+  const resultEvents = events.filter(event => {
+    if (filters.fromCity && event.from !== filters.fromCity) {
+      return false;
+    }
+
+    if (filters.toCity && event.to !== filters.toCity) {
+      return false;
+    }
+
+    if (filters.departureDate && event.day !== filters.departureDate) {
+      return false;
+    }
+    return true;
+  });
+
+  if (sortBy === "departure") {
+    resultEvents.sort((trip1, trip2) => {
+      return sortDirection * (parseTime(trip2.departure) - parseTime(trip1.departure));
+    });
+  }
+
+  if (sortBy === "price") {
+    resultEvents.sort((trip1, trip2) => {
+      return sortDirection * (trip1.price - trip2.price);
+    });
+  }
+
+  return resultEvents;
+} */
 
 export default reducer;

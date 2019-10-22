@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 
 function MainContent() {
     let events = useSelector(state => state && state.events);
-
-return <div className='mainContent'>
+    
+    return <div className='mainContent'>
         <h2>October</h2>
-        {events.map(singleEvent=>{
-             return <EventBox {...singleEvent}/>
+        {events.map(singleEvent => {
+            return <EventBox {...singleEvent} />
         })}
     </div>
 }
