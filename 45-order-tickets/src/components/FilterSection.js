@@ -4,7 +4,7 @@ import FilterDropdown from "./FilterDropdown";
 import actionTypes from "../actionTypes";
 import {getDayString} from "../dateUtils";
 
-function FilterSection(props) {
+function FilterSection() {
   let cities = useSelector(state => state && state.cities);
   let [departureDate, setDepartureDate] = useState(null);
   let dispatch = useDispatch();
