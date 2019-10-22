@@ -1,26 +1,34 @@
 import React from 'react'
-import events from 'events'
 
-const eventsList = events;
-console.log(eventsList);
+function EventBox(props) {
+    let { audience, categories, date, daytime, location, title } = props;
 
-function EventBox() {
-    return <div>
+    return <div className="singleEvent">
         <div>
-            <span>OCT</span><br/>
-            <span>02</span><br/>
-            <span>2019</span>
+            <span>{date}</span><br />
         </div>
         <div className='single-event'>
-          <h3 >Vimeo CEO Anjali Sud</h3>
-            <span>SUN, 6:30 PM to 8:30 Pm</span><br/>
-            <span>Linkedin</span>
+            <h3 >{title}</h3>
+            <div>{daytime}</div>
+            <div>{location}</div>
+            <span>{audience + " "}</span>
+            <span>{categories}</span>
         </div>
         <footer>
-            <div>social media</div>
-            <p>register</p>
+            <span>social media </span>
+            <span>Register</span>
         </footer>
     </div>
 }
 
 export default EventBox;
+
+/*
+{
+        "date": "02 OCT 2019",
+        "title": "HBSCNY Senior Event for All: Hudson River Park",
+        "daytime": "WED, 1:00 PM TO 3:30 PM",
+        "location": null,
+        "categories": "SENIORS",
+        "audience": "GENERAL PUBLIC"
+*/
