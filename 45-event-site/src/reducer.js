@@ -10,33 +10,46 @@ import events from './events';
 */
 
 const initialState = {
-    events: events,
-    categories: getCategoriesFromEvents(events);
-
-}
-
-function getCategoriesFromEvents(events) {
-    let categories = [];
-    events.forEach(event => {
-        if (!categories.includes(event.categories)) {
-            categories.push(even.categories);
-        }
-    })
-    categories.sort();
-    return categories;
-}
-
-/*
-const initialState = {
-  trips: trips,
-  cities: getCitiesFromTrips(trips),
+  events: events,
+  audience: getAudienceFromEvents(events),
+  category: getCategoryFromEvents(events),
   filters: {
-    fromCity: null,
-    toCity: null,
-    departureDate: null,
-    returnDate: null
-  },
-  sortBy: "departure",
-  sortDirection: 1,
-  pickableDays: getPickableDaysStartingFrom(startingDayString, trips)
-*/
+    dateRange: null,
+  }
+}
+
+function getCategoryFromEvents(events) {
+  let categoriesArray = [];
+  events.forEach(event => {
+    if (!categoriesArray.includes(event.categories)) {
+      categoriesArray.push(event.categories);
+    }
+  })
+  categoriesArray.sort();
+  return categoriesArray;
+}
+
+function getAudienceFromEvents(events) {
+  let audienceArray = [];
+  events.forEach(event => {
+    if (!audienceArray.includes(event.audience)) {
+      audienceArray.push(event.audience);
+    }
+  })
+  audienceArray.sort();
+  return audienceArray;
+}
+
+function reducer(state = initialState, action) {
+
+  let newState = { ...state, filters: { ...state.filters } };
+  if (state.events) {
+    newState.events = [...state.events];
+    newState.audience = getAudienceFromEvents(newState.events);
+    newState.category= getCategoryFromEvents(newState.events);
+  }
+  
+  return newState;
+}
+
+export default reducer;
