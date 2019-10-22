@@ -4,17 +4,19 @@ function EventBox(props) {
     let { audience, categories, date, daytime, location, title } = props;
 
     return <div className="singleEvent">
-        <div>
-            <span>{date}</span><br />
-        </div>
-        <div className='single-event'>
-            <h3 >{title}</h3>
-            <div>{daytime}</div>
-            <div>{location}</div>
-            <span>{audience + " "}</span>
-            <span>{categories}</span>
-        </div>
-        <footer>
+        <main className="eventBoxMainContent">
+            <div>
+                <span>{date}</span><br />
+            </div>
+            <div className='single-event'>
+                <h3 >{title}</h3>
+                <div>{daytime}</div>
+                <div>{location}</div>
+                <span>{audience + " "}</span>
+                <span>{categories}</span>
+            </div>
+        </main>
+        <footer className="footerBox">
             <span>social media </span>
             <span>Register</span>
         </footer>
