@@ -6,7 +6,7 @@ import {getDayString} from "../dateUtils";
 
 function FilterSection() {
   let cities = useSelector(state => state && state.cities);
-  let [departureDate, setDepartureDate] = useState(null);
+  let [departureDate, setDepartureDate] = useState("");
   let dispatch = useDispatch();
 
   function onDepartureDateChange(event) {

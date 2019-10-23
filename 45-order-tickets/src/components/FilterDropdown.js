@@ -9,7 +9,7 @@ function FilterDropdown(props) {
 
   let { filteredField, options, placeholder } = props;
 
-  let [selectedOption, setSelectedOption] = useState(null);
+  let [selectedOption, setSelectedOption] = useState("");
   let dispatch = useDispatch();
 
   function onChange(event) {
@@ -25,12 +25,11 @@ function FilterDropdown(props) {
   }
 
   return <select id="from-selector"
-    defaultValue={""}
     onChange={onChange}
     value={selectedOption}>
     <option value="">{placeholder}</option>
     {
-      options.map(value => <option value={value}>{value}</option>)
+      options.map(value => <option key={value}>{value}</option>)
     }
   </select>;
 }

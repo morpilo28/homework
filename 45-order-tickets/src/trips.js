@@ -7,7 +7,7 @@ export default [
     "operator": "citilink",
     "busId": "GLI50533",
     "price": 23,
-    "seats": 30,
+    "seats": 3,
     "from": "New York, NY",
     "to": "Washington, DC"
   },
@@ -17,12 +17,12 @@ export default [
     "departure": "1:01 PM",
     "duration": "4h19m",
     "arrival": "5:20 PM",
-    "operator": "citilink",
+    "operator": "Metro_Transit",
     "busId": "GLI50534",
-    "price": 1,
-    "seats": 30,
+    "price": 40,
+    "seats": 5,
     "from": "New York, NY",
-    "to": "Washington, DC"
+    "to": "Las Vegas, NA"
   },
 
   {
@@ -30,12 +30,12 @@ export default [
     "departure": "12:01 PM",
     "duration": "4h19m",
     "arrival": "4:20 PM",
-    "operator": "citilink",
+    "operator": "Ride_SMART",
     "busId": "GLI50533",
-    "price": 25,
+    "price": 10,
     "seats": 30,
     "from": "New York, NY",
-    "to": "Washington, DC"
+    "to": "San Antonio, TX"
   },
 
   {
@@ -66,10 +66,543 @@ export default [
 
   {
     "day": "Fri, Sept 27",
+    "departure": "4:01 AM",
+    "duration": "3h19m",
+    "arrival": "6:20 AM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 50,
+    "seats": 1,
+    "from": "Las Vegas, NA",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Fri, Sept 27",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 37,
+    "seats": 12,
+    "from": "San Antonio, TX",
+    "to": "New York, NY"
+  },
+
+  {
+    "day": "Sat, Sept 28",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 15,
+    "seats": 12,
+    "from": "San Antonio, TX",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Sept 28",
     "departure": "5:01 AM",
     "duration": "4h19m",
     "arrival": "4:20 PM",
     "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 44,
+    "seats": 10,
+    "from": "San Antonio, TX",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Sept 29",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 22,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Sept 29",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 21,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Sept 29",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 48,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Sept 29",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Sept 30",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 52,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Sept 30",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 37,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Sept 30",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 24,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Sept 30",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 45,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 1",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 1",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 1",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Wed, Oct 2",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Wed, Oct 2",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Thu, Oct 3",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Thu, Oct 3",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Thu, Oct 3",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Fri, Oct 4",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Fri, Oct 4",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Oct 5",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Oct 5",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Oct 5",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Oct 6",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Oct 7",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 8",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Wed, Oct 9",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Thu, Oct 10",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Fri, Oct 11",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Oct 12",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Oct 13",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Oct 14",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 15",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Wed, Oct 16",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Thu, Oct 17",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "citilink",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Fri, Oct 18",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sat, Oct 19",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Metro_Transit",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Sun, Oct 20",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Mon, Oct 21",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Westcat",
+    "busId": "GLI50533",
+    "price": 25,
+    "seats": 30,
+    "from": "Phoenix, AZ",
+    "to": "San Antonio, TX"
+  },
+
+  {
+    "day": "Tue, Oct 22",
+    "departure": "5:01 AM",
+    "duration": "4h19m",
+    "arrival": "4:20 PM",
+    "operator": "Ride_SMART",
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
