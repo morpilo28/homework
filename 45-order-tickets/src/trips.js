@@ -8,7 +8,7 @@ export default [
     "busId": "GLI50533",
     "price": 23,
     "seats": 3,
-    "from": "New York, NY",
+    "from": "Phoenix, AZ",
     "to": "Washington, DC"
   },
 
@@ -21,7 +21,7 @@ export default [
     "busId": "GLI50534",
     "price": 40,
     "seats": 5,
-    "from": "New York, NY",
+    "from": "Los Angeles, CL",
     "to": "Las Vegas, NA"
   },
 
@@ -35,7 +35,7 @@ export default [
     "price": 10,
     "seats": 30,
     "from": "New York, NY",
-    "to": "San Antonio, TX"
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -100,7 +100,7 @@ export default [
     "price": 15,
     "seats": 12,
     "from": "San Antonio, TX",
-    "to": "San Antonio, TX"
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -113,7 +113,7 @@ export default [
     "price": 44,
     "seats": 10,
     "from": "San Antonio, TX",
-    "to": "San Antonio, TX"
+    "to": "New York, NY"
   },
 
   {
@@ -125,8 +125,8 @@ export default [
     "busId": "GLI50533",
     "price": 22,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "New York, NY",
+    "to": "Los Angeles, CL"
   },
 
   {
@@ -138,7 +138,7 @@ export default [
     "busId": "GLI50533",
     "price": 21,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Las Vegas, NA",
     "to": "San Antonio, TX"
   },
 
@@ -177,8 +177,8 @@ export default [
     "busId": "GLI50533",
     "price": 52,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "New York, NY"
   },
 
   {
@@ -191,7 +191,7 @@ export default [
     "price": 37,
     "seats": 30,
     "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "to": "Washington, DC"
   },
 
   {
@@ -203,7 +203,7 @@ export default [
     "busId": "GLI50533",
     "price": 24,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "San Antonio, TX",
     "to": "San Antonio, TX"
   },
 
@@ -216,7 +216,7 @@ export default [
     "busId": "GLI50533",
     "price": 45,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "New York, NY",
     "to": "San Antonio, TX"
   },
 
@@ -229,8 +229,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -255,7 +255,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Washington, DC",
     "to": "San Antonio, TX"
   },
 
@@ -268,8 +268,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Los Angeles, CL",
+    "to": "New York, NY"
   },
 
   {
@@ -282,7 +282,7 @@ export default [
     "price": 25,
     "seats": 30,
     "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "to": "Los Angeles, CL"
   },
 
   {
@@ -294,8 +294,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "New York, NY",
+    "to": "Las Vegas, NA"
   },
 
   {
@@ -307,8 +307,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "San Antonio, TX",
+    "to": "Washington, DC"
   },
 
   {
@@ -320,8 +320,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "New York, NY"
   },
 
   {
@@ -333,7 +333,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Los Angeles, CL",
     "to": "San Antonio, TX"
   },
 
@@ -346,8 +346,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "New York, NY",
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -359,8 +359,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "San Antonio, TX",
+    "to": "Las Vegas, NA"
   },
 
   {
@@ -372,8 +372,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "Los Angeles, CL"
   },
 
   {
@@ -386,7 +386,7 @@ export default [
     "price": 25,
     "seats": 30,
     "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "to": "New York, NY"
   },
 
   {
@@ -411,7 +411,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Las Vegas, NA",
     "to": "San Antonio, TX"
   },
 
@@ -424,7 +424,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Washington, DC",
     "to": "San Antonio, TX"
   },
 
@@ -438,7 +438,7 @@ export default [
     "price": 25,
     "seats": 30,
     "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "to": "New York, NY"
   },
 
   {
@@ -450,8 +450,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Los Angeles, CL",
+    "to": "Washington, DC"
   },
 
   {
@@ -463,8 +463,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "Las Vegas, NA"
   },
 
   {
@@ -477,7 +477,7 @@ export default [
     "price": 25,
     "seats": 30,
     "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "to": "Los Angeles, CL"
   },
 
   {
@@ -489,8 +489,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Las Vegas, NA",
+    "to": "New York, NY"
   },
 
   {
@@ -502,8 +502,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Las Vegas, NA",
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -515,8 +515,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Los Angeles, CL",
+    "to": "Las Vegas, NA"
   },
 
   {
@@ -528,7 +528,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Washington, DC",
     "to": "San Antonio, TX"
   },
 
@@ -541,7 +541,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Los Angeles, CL",
     "to": "San Antonio, TX"
   },
 
@@ -554,8 +554,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Las Vegas, NA",
+    "to": "Los Angeles, CL"
   },
 
   {
@@ -567,7 +567,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
+    "from": "Las Vegas, NA",
     "to": "San Antonio, TX"
   },
 
@@ -580,8 +580,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Los Angeles, CL",
+    "to": "New York, NY"
   },
 
   {
@@ -593,8 +593,8 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Washington, DC",
+    "to": "Phoenix, AZ"
   },
 
   {
@@ -606,7 +606,7 @@ export default [
     "busId": "GLI50533",
     "price": 25,
     "seats": 30,
-    "from": "Phoenix, AZ",
-    "to": "San Antonio, TX"
+    "from": "Las Vegas, NA",
+    "to": "Los Angeles, CL"
   }
 ];
