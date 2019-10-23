@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import actionTypes from "../actionTypes";
 
 function FilterDropDown(props) {
-    let { id, filteredField, options, placeholder } = props;
+    let { filteredField, options, placeholder } = props;
     let [selectedOption, setSelectedOption] = useState('');
     let dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ function FilterDropDown(props) {
         };
         dispatch(action);
     }
-    return <select id={id}
+    return <select id={filteredField}
         className='input-fields'
         onChange={onChange}
         value={selectedOption}>

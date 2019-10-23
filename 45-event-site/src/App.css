@@ -12,7 +12,8 @@
   margin: auto;
   margin-bottom: 10px;
 }
-.input-field-container{
+
+.input-field-container {
   height: 59px;
   width: fit-content;
   border-bottom: 1px solid grey;
@@ -22,16 +23,17 @@
   width: 170px;
 }
 
-label, input {
+label,
+input {
   display: block;
 }
 
-.filterBox{
+.filterBox {
   float: left;
   margin-right: 10px;
 }
 
-.singleEvent{
+.singleEvent {
   position: relative;
   width: 27%;
   height: 250px;
@@ -43,12 +45,21 @@ label, input {
   justify-content: space-between;
 }
 
-.footerBox{
+.footerBox {
   border-top: 1px solid rgba(175, 175, 175, 0.5);
 }
 
-.eventBoxMainContent{
+.eventBoxMainContent {
   width: 100%;
   height: 200px;
 
+}
+
+#search {
+  padding: 2px;
+}
+
+#category,
+#audience {
+  padding: 3px;
 }
