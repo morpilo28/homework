@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Quotes
+  p Welcome to #{title}
+  each item in allQuotes
+    b
+      div='Quote: ' + item.quote
+    div='By: ' + item.by
+    div='Rating: ' + item.rating
+    div='Id: ' + item.id
+    br
+

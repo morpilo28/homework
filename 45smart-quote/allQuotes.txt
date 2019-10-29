@@ -1,0 +1,183 @@
+[
+	{
+		"id" :1,
+		"quote": "There are only two great tragedies in life: one is not getting what you want and the other is getting it.",
+		"by": "Oscar Wilde",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :2,
+		"quote": "Books say: She did this because. Life says: She did this. Books are where things are explained to you; life is where things aren’t. I’m not surprised some people prefer books.",
+		"by": "Julian Barnes",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :3, 
+		"quote": "Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.", 
+		"by": "Buddha",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :4, 
+		"quote": "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.", 
+		"by": "Albert Einstein",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :5, 
+		"quote": "Love takes off the masks that we fear we cannot live without and know we cannot live within.", 
+		"by": "James Baldwin",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :6, 
+		"quote": "“Sometimes the questions are complicated, and the answers are simple.", 
+		"by": "Dr. Seuss",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :7, 
+		"quote": "“What gets us into trouble is not what we don’t know. It’s what we know for sure that just ain’t so.", 
+		"by": "Mark Twain",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :8, 
+		"quote": "Anyone who has never made a mistake has never tried anything new.", 
+		"by": "Albert Einstein",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :9, 
+		"quote": "Knowing what must be done does away with fear.", 
+		"by": "Rosa Parks",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :10, 
+		"quote": "Holding onto your anger is like drinking poison and expecting the other person to die.", 
+		"by": "Buddha",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :11, 
+		"quote": "“Life can only be understood backwards; but it must be lived forwards.", 
+		"by": "Søren Kierkegaard",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :12, 
+		"quote": "It’s not that I’m so smart. It’s just that I stay with problems longer.", 
+		"by": "Albert Einstein",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :13, 
+		"quote": "Life is really simple, but we insist on making it complicated.", 
+		"by": "Confucius",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :14, 
+		"quote": "The two most important days of your life are the day that you’re born and the day that you find out why.", 
+		"by": "Mark Twain",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :15, 
+		"quote": "Education is not the learning of the facts, but the training of the mind to think.", 
+		"by": "Albert Einstein",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :16, 
+		"quote": "In three words I can sum up everything I’ve learned about life: it goes on.", 
+		"by": "Robert Frost",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :17, 
+		"quote": "The present moment is filled with joy and happiness. If you are attentive, you will see it.", 
+		"by": "Thich Nhat Hanh",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :18, 
+		"quote": "A bird doesn't sing because it has an answer, it sings because it has a song.", 
+		"by": "Maya Angelou",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :19, 
+		"quote": "We learn from experience that men never learn anything from experience.", 
+		"by": "George Bernard Shaw",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :20, 
+		"quote": "Every man is a damn fool for at least five minutes every day; wisdom consists in not exceeding the limit.", 
+		"by": "Elbert Hubbard",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :21, 
+		"quote": "If you surrender to the wind, you can ride it.", 
+		"by": "Toni Morrison",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :22, 
+		"quote": "We don’t see things the way they are. We see them the way we are.", 
+		"by": "Talmud",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :23, 
+		"quote": "A journey of a thousand miles begins with a single step.", 
+		"by": "Lao Tzu",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :24, 
+		"quote": "All life is an experiment. The more experiments you make, the better.", 
+		"by": "Ralph Waldo Emerson",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :25, 
+		"quote": "Be more concerned with your character than your reputation, because your character is what you really are, while your reputation is merely what others think you are.", 
+		"by": "John Wooden",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :26, 
+		"quote": "I write because I don’t know what I think until I read what I say.", 
+		"by": "Flannery O’Connor",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :27, 
+		"quote": "Learn from the mistakes of others. You can’t live long enough to make them all yourself.", 
+		"by": "BudEleanor Rooseveltdha",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :28, 
+		"quote": "Many receive advice, only the wise profit from it.", 
+		"by": "Harper Lee",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :29, 
+		"quote": "Destiny is a name often given in retrospect to choices that had dramatic consequences.", 
+		"by": "J.K. Rowling",
+		"rating": 0.0,
+		"ratersCount": 0
+	}, {
+		"id" :30, 
+		"quote": "The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function.", 
+		"by": "F. Scott Fitzgerald",
+		"rating": 0.0,
+		"ratersCount": 0
+	}
+]

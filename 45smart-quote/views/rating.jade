@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 Quotes
+    p Welcome to #{title}
+    form(method='post', action='/rate-quote')
+        input(name='quoteId', placeholder='QUOTE ID')
+        input(name='rate', placeholder='RATE BETWEEN 1 TO 5')
+        button(name='send') Send
